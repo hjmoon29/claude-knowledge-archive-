@@ -1,10 +1,18 @@
 ﻿# Claude Knowledge Archive - Daily Sync Script
 # Task Scheduler: ClaudeKnowledgeArchive (daily 09:30)
-# Ver: 1.2 (2026-09-07)
+# Ver: 1.3 (2026-09-07) - adds JIRA/QA mirror
 
 $ArchivePath = "G:\내 드라이브\claude-archive"
 $MemorySrc = "$env:USERPROFILE\.claude\projects\C--Users-20020911\memory"
 $LogFile = Join-Path $ArchivePath "logs\sync-$(Get-Date -Format 'yyyy-MM').log"
+
+# JIRA/QA source files - patterns to mirror to jira-answers/
+$JiraSources = @(
+    "$env:USERPROFILE\Documents\수면센서QA문의사항*.xlsx",
+    "$env:USERPROFILE\Documents\*QA*.xlsx",
+    "$env:USERPROFILE\Documents\*JIRA*.xlsx",
+    "$env:USERPROFILE\Documents\*문의*.xlsx"
+)
 
 function Log {
     param($msg)
@@ -16,7 +24,7 @@ function Log {
 
 Log "=== Sync start ==="
 
-# 1. Sanitize + copy
+# 1. Sanitize + copy memory
 $patterns = @(
     @{ Regex = 'figd_[A-Za-z0-9_]{20,}';       Repl = 'figd_***REDACTED***' },
     @{ Regex = 'ATATT3xFf[A-Za-z0-9=/_-]{20,}'; Repl = 'ATATT***REDACTED***' },
@@ -32,7 +40,25 @@ Get-ChildItem "$MemorySrc\*.md" | ForEach-Object {
 }
 Log "Memory files copied: $copied"
 
-# 2. Safety scan for token leaks
+# 2. Mirror JIRA/QA files (dedup by name)
+$jiraCopied = 0
+$seen = @{}
+foreach ($pattern in $JiraSources) {
+    Get-ChildItem -Path $pattern -ErrorAction SilentlyContinue | ForEach-Object {
+        if (-not $seen.ContainsKey($_.Name)) {
+            $seen[$_.Name] = $true
+            $dst = Join-Path $ArchivePath "jira-answers\$($_.Name)"
+            # Copy only if source is newer or destination missing
+            if (-not (Test-Path $dst) -or ($_.LastWriteTime -gt (Get-Item $dst).LastWriteTime)) {
+                Copy-Item $_.FullName $dst -Force
+                $jiraCopied++
+            }
+        }
+    }
+}
+Log "JIRA/QA files mirrored (new/updated): $jiraCopied"
+
+# 3. Safety scan for token leaks
 $leak = Select-String -Path "$ArchivePath\memory\*.md" -Pattern "figd_[A-Za-z0-9_]{15,}", "ATATT3xFf[A-Za-z0-9]{15,}", "NzY2NTg2N[A-Za-z0-9]{10,}" -ErrorAction SilentlyContinue
 if ($leak) {
     Log "TOKEN LEAK DETECTED - aborting commit"
@@ -40,7 +66,7 @@ if ($leak) {
     exit 2
 }
 
-# 3. Git commit + push (stderr NOT redirected - avoids PS 5.1 NativeCommandError)
+# 4. Git commit + push
 Set-Location $ArchivePath
 $status = git status --porcelain
 if ($status) {
