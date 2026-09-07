@@ -1,0 +1,19 @@
+# 절대 커밋 금지: 로컬 전용 크리덴셜
+CREDENTIALS.local.md
+credentials.local.*
+*.local.md
+.env
+.env.*
+
+# 임시/로그
+logs/*.log
+*.tmp
+*.bak
+
+# OS
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# Google Drive 메타
+.gdrive_cache/

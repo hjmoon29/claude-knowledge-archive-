@@ -1,0 +1,21 @@
+# Memory Index
+
+- [IoCare+ Figma 프로젝트 구조](project_iocare_figma.md) — 코웨이 IoT기획팀 IoCare+ 앱(67개 파일) + 중국 ODM 매트리스 Figma 문서 전체 구조 (2026-09-07 재학습, 15개 파일 버전점프)
+- [IoCare+ 앱 디바이스 스펙](figma_app_device_specs.md) — AOS 9.0+·iOS 15+ 최소사양, 태블릿 미지원(폰 전용 UI), 세션 토큰 정책
+- [Figma 파일별 페이지 ID 전체 목록](figma_page_ids.md) — 67개 파일 메인페이지 ID·추가페이지 맵 (2026-09-07 버전 갱신, 일부 신규페이지 ID 미확인)
+- [IoCare+ Figma 주요 화면 섹션 구조](figma_screen_sections.md) — 공통·장소설정·제품등록(v1.18)·제품홈·제품공통·매트리스(v1.12)·리포트매트리스(v1.10)·메뉴설정(v1.08)·중국ODM(v0.13) 섹션 전체 (2026-09-07 심층 학습)
+- [Gmail MCP 디버깅 작업](project_gmail_mcp_debug.md) — Gmail MCP 서버 정상화 확인 완료 (2026-05-29)
+- [제품군별 이메일 분류 (매트리스/비데/모션베드)](project_email_product_summary.md) — IoCare+ 3개 제품군 기획·버그·Figma 이메일 요약 (2026-04~05)
+- [IoCare+ 장소설정 기획서 v1.05](project_iocare_loc_planning.md) — LOC 장소설정 19개 섹션 전체 정책 (장소선택/추가/관리/멤버초대/QR/제품관리 등)
+- [IoCare+ 제품등록 기획서 v1.13](project_iocare_product_registration.md) — 점유인증·재등록 차단(EM005)·Tuya 제한·장소이동 정책
+- [IoCare+ BLE Only 제품 정책](project_iocare_ble_products.md) — 매트리스·비데·모션베드 BLE 연결/공유/동시제어/데이터동기화 정책 + WiFi 비교
+- [IoT 기획 Google Drive 폴더 구조 및 핵심 문서](project_gdrive_iot_docs.md) — 01.IoT기획 공유폴더(1179폴더/3427파일), 핵심 스프레드시트 ID, 매트리스 모델/기능 현황, 토큰 갱신법
+- [Figma 매일 학습 선호](feedback_figma_learning.md) — 거의 매일 Figma 전체 파일 재학습·버전 최신화 요청 (자동화 대신 대화 시작 시 제안)
+- [Confluence wiki 업데이트 워크플로우](project_wiki_workflow.md) — wiki.coway.com 사내 Confluence curl+PowerShell REST API 방식 (Rovo MCP 미지원)
+- [CWIOTSVC Wiki 전체 구조 맵](project_wiki_cwiotsvc_structure.md) — IoT 서비스 스페이스 950페이지 구조, 진행 중 제품 목록, 주요 의사결정 페이지 ID 전체 (2026-07-29)
+- [IoCare+ 지식베이스 챗봇 개발](project_iocare_chatbot.md) — RAG 챗봇 개발 현황, 임베딩 저장 미완료(Voyage AI rate limit), 다음 단계 정리 (2026-08-03)
+- [LEGACT 수면 센서 민감정보 동의/미동의 협의](project_legact_consent.md) — 미동의→재동의 복귀 이슈·4가지 해결안·개인정보 수집 관점 검토 (2026-08-04, 논의 진행 중)
+- [스마트 매트리스 슬립싱크 & 파이어쉴드 슬립싱크 기획](project_slipsync_fireshield.md) — 두 신규 매트리스 제품 IoCare+ 앱 적용 기획 (제어유무·센서정책·등록플로우, 2026-08-28)
+- [슬립싱크 앱 설계 방향 정의 v260820](project_slipsync_app_design.md) — 스마트/일반 매트리스 슬립싱크 등록·투데이·디바이스·리포트 전체 정책 (수면단계 평가기준·수면유형 5종·데이터삭제 조건 포함)
+- [수면센서QA문의사항 답변 작업 (진행 중)](project_qa_answers_inprogress.md) — Q23~Q33 답변 작성 완료, Excel 파일 닫은 후 저장 재개 필요 (2026-08-31)
+- [MCP 토큰 자동화 & wiki 연결 수정](project_mcp_token_automation.md) — 토큰 만료 자동감지 스크립트 완료, wiki.coway.com Data Center PAT Bearer 연결 수정 중 (2026-08-31)
