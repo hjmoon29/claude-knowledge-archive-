@@ -1,4 +1,4 @@
----
+﻿---
 name: IoCare+ 제품등록 기획서 v1.13
 description: 00_03제품등록 기획서 핵심 정책 — 점유인증, 재등록 차단, Tuya 제품 제한, 장소 이동 정책
 type: project

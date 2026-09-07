@@ -1,4 +1,4 @@
----
+﻿---
 name: Confluence wiki.coway.com 업데이트 워크플로우
 description: wiki.coway.com 사내 Confluence 페이지 읽기/수정 방법 (self-hosted, Atlassian Rovo MCP 미지원)
 type: project

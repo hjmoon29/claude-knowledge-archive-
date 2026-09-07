@@ -1,4 +1,4 @@
----
+﻿---
 name: LEGACT 수면 센서 민감정보 동의/미동의 협의
 description: LEGACT 수면 센서의 미동의→재동의 복귀 이슈 및 해결안, 법무 승인 완료 (2026-08-11)
 type: project

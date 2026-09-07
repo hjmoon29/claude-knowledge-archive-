@@ -1,4 +1,4 @@
----
+﻿---
 name: IoT 기획 Google Drive 폴더 구조 및 핵심 문서
 description: 01. IoT 기획 Google Drive 공유폴더 전체 구조, 핵심 스프레드시트 ID, 학습된 내용 요약 (2026-06-11)
 type: project

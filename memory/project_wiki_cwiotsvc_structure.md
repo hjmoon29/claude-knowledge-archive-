@@ -1,4 +1,4 @@
----
+﻿---
 name: CWIOTSVC Wiki 전체 구조 맵
 description: wiki.coway.com [COWAY] IoT 서비스 스페이스 전체 구조 및 주요 섹션 페이지 ID (2026-07-29 기준)
 type: project

@@ -1,4 +1,4 @@
----
+﻿---
 name: IoCare+ 스마트 매트리스 슬립싱크 & 시그니처 파이어쉴드 슬립싱크 기획
 description: 두 신규 매트리스 제품의 IoCare+ 앱 적용 기획 내용 (Figma 직접 조회 2026-08-28)
 type: project

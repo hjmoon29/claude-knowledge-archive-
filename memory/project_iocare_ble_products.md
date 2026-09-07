@@ -1,4 +1,4 @@
----
+﻿---
 name: IoCare+ BLE Only 제품 정책
 description: 매트리스·비데·모션베드의 BLE 연결 정책, 장소 공유 시 동작 방식, WiFi 제품과의 차이
 type: project

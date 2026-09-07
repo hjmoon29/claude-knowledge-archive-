@@ -1,4 +1,4 @@
----
+﻿---
 name: MCP 토큰 자동화 및 위키 연결 작업
 description: Figma/Atlassian 토큰 만료 자동 감지+갱신 스크립트 구축, wiki.coway.com Data Center 연결 완료
 type: project

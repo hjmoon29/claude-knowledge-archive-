@@ -1,4 +1,4 @@
----
+﻿---
 name: Gmail MCP 디버깅 작업
 description: Gmail MCP 서버 정상화 확인 완료 (2026-05-29)
 type: project

@@ -1,4 +1,4 @@
----
+﻿---
 name: Figma 파일 매일 학습 선호
 description: 사용자가 IoCare+ Figma 프로젝트 파일을 거의 매일 학습(최신화)하기를 원함
 type: feedback

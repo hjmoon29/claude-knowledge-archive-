@@ -1,4 +1,4 @@
----
+﻿---
 name: IoCare+ 지식베이스 챗봇 개발 진행 상황
 description: Confluence/Jira/Figma 기반 RAG 챗봇 개발 현황 및 다음 단계 (2026-08-03)
 type: project

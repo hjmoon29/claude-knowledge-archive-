@@ -1,4 +1,4 @@
----
+﻿---
 name: IoCare+ 00_02장소설정 화면기획서 (v1.05)
 description: IoCare+ 앱 장소설정 기능 전체 UX 기획 내용 — 정책, 화면 흐름, 버튼 정의 포함
 type: project

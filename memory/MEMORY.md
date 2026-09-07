@@ -1,4 +1,4 @@
-# Memory Index
+﻿# Memory Index
 
 - [IoCare+ Figma 프로젝트 구조](project_iocare_figma.md) — 코웨이 IoT기획팀 IoCare+ 앱(67개 파일) + 중국 ODM 매트리스 Figma 문서 전체 구조 (2026-09-07 재학습, 15개 파일 버전점프)
 - [IoCare+ 앱 디바이스 스펙](figma_app_device_specs.md) — AOS 9.0+·iOS 15+ 최소사양, 태블릿 미지원(폰 전용 UI), 세션 토큰 정책

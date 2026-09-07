@@ -1,4 +1,4 @@
----
+﻿---
 name: IoCare+ Figma 프로젝트 구조
 description: 코웨이 IoT기획팀의 IoCare+ 앱 및 중국 ODM 스마트매트리스 Figma 문서 전체 구조 (2026-09-07 최신화)
 type: project

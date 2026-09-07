@@ -1,4 +1,4 @@
----
+﻿---
 name: IoCare+ Figma 파일별 페이지 ID 전체 목록
 description: 67개 Figma 파일의 실제 페이지 이름·ID 맵 (2026-09-07 버전 최신화). 메인 콘텐츠 페이지 ID 포함.
 type: reference
