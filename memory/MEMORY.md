@@ -19,3 +19,5 @@
 - [슬립싱크 앱 설계 방향 정의 v260820](project_slipsync_app_design.md) — 스마트/일반 매트리스 슬립싱크 등록·투데이·디바이스·리포트 전체 정책 (수면단계 평가기준·수면유형 5종·데이터삭제 조건 포함)
 - [수면센서QA문의사항 답변 작업 (진행 중)](project_qa_answers_inprogress.md) — Q23~Q33 답변 작성 완료, Excel 파일 닫은 후 저장 재개 필요 (2026-08-31)
 - [MCP 토큰 자동화 & wiki 연결 수정](project_mcp_token_automation.md) — 토큰 만료 자동감지 스크립트 완료, wiki.coway.com Data Center PAT Bearer 연결 수정 중 (2026-08-31)
+- [Claude Knowledge Archive 3중 백업](project_knowledge_archive.md) — G:/내 드라이브/claude-archive + GitHub hjmoon29/claude-knowledge-archive- 자동 sync (2026-09-07)
+- [지식 백업 전략 3중 조합 선호](feedback_backup_strategy.md) — 로컬Git+Drive+GitHub 조합, 토큰 자동 sanitize 필수 원칙
