@@ -7,17 +7,25 @@ originSessionId: 3f0c6952-6e6e-441a-af0b-3b29391b8e07
 ## 완료된 작업
 
 ### 토큰 자동화 스크립트
-- `~/.claude/check-mcp-tokens.ps1` — 매일 09시 자동 실행, 만료 7일 전 사전 경고
-- `~/.claude/update-mcp-token.ps1` — 토큰 만료 시 브라우저 자동 오픈 + 붙여넣기로 mcp.json 업데이트
+- `~/.claude/check-mcp-tokens.ps1` — 매일 **08:15** 자동 실행 (2026-09-08 변경), 만료 7일 전 사전 경고 + 4개 서비스 실제 API ping
+  - 체크 대상: Figma, Atlassian(jira.coway.com Data Center), Wiki(wiki.coway.com), **Google Sheets** (2026-09-08 추가)
+  - Google Sheets: `.gdrive-server-credentials.json`의 refresh_token → access_token 재발급 → 스프레드시트 `1p8COpGH5aCzjwQ582BvcxYdWs6qTmol7btSHvoJYld8` ping
+  - **주의:** Rovo Cloud (atlassian.net)는 OAuth 세션 기반이라 스크립트 검증 불가 — Claude Code 실행 중일 때만 접근 가능
+- `~/.claude/update-mcp-token.ps1` — 토큰 만료 시 브라우저 자동 오픈 + 붙여넣기로 mcp.json 업데이트 (Sheets 미지원, get-sheets-token.ps1 별도 실행)
+- `~/.claude/get-sheets-token.ps1` — Google Sheets OAuth 재인증 (refresh_token 재발급)
 - `~/.claude/token-expiry.json` — 만료일 기록 (Figma/Atlassian 둘 다 2026-11-29)
-- Task Scheduler: `ClaudeMCPTokenCheck` 등록 완료
+- `~/.claude/token-check.log` — 실행 로그 (매일 append)
+- Task Scheduler: `ClaudeMCPTokenCheck` 등록 완료 (매일 08:15)
 
-### 토큰 현황 (2026-08-31 기준)
-| 서비스 | 토큰 | 만료일 |
-|--------|------|--------|
-| Figma | `figd_***REDACTED***` | 2026-11-29 |
-| Atlassian (id.atlassian.com) | `ATATT3xFfGF03VWr...=AC550710` | 2026-11-29 (추정) |
-| Confluence PAT (wiki.coway.com) | `PAT_***REDACTED***` | 미정 |
+### 토큰 현황 (2026-09-08 기준)
+| 서비스 | 토큰 | 인증 방식 | 만료일 |
+|--------|------|-----------|--------|
+| Figma | `figd_***REDACTED***` | `X-Figma-Token` | 2026-11-29 |
+| Jira Data Center (jira.coway.com) | `MDU2NzA5MzUyOTM2Ol...` | **Bearer PAT** (2026-09-08 전환) | 2026-12-07 |
+| Confluence PAT (wiki.coway.com) | `NzgzNDQ1OTEzODcwOh...` | Bearer PAT | 무기한 (name=260908, id=233) |
+| Google Sheets OAuth | `.gdrive-server-credentials.json` refresh_token | OAuth refresh | 자동 갱신 |
+
+**Cloud API token (`ATATT...=AC550710`) 폐기됨** — CAPTCHA_CHALLENGE + Data Center 부적합. 대체된 PAT는 wiki 방식과 동일한 base64 형태.
 
 ### wiki.coway.com MCP 연결 완료 (2026-09-01)
 
@@ -26,12 +34,14 @@ originSessionId: 3f0c6952-6e6e-441a-af0b-3b29391b8e07
 - `@xuandev/atlassian-mcp` 원본 패키지는 Cloud Basic 인증만 지원 → 로컬 복사본 수정
 
 **수정한 파일 (`~/.claude/mcp-servers/atlassian-mcp/dist/`):**
-1. `common/auth.js` — `confluenceRequest` 메서드 추가 (Bearer PAT + `/wiki` prefix 자동 제거)
-2. `common/config.js` — `confluenceDomain`, `confluenceToken` 옵션 필드 추가
-3. `index.js` — `--confluence-domain`, `--confluence-token` CLI 옵션 추가
+1. `common/auth.js` — `confluenceRequest` 메서드 (Bearer PAT + `/wiki` prefix 자동 제거) + **`request()`에서 `jiraToken` 있으면 Bearer, 없으면 Basic 자동 분기** (2026-09-08 추가)
+2. `common/config.js` — `confluenceDomain/Token`, **`jiraToken`** 옵션 필드 추가. Bearer 방식이면 email/apiToken 생략 가능하도록 validation 완화 (2026-09-08)
+3. `index.js` — `--confluence-domain/token`, **`--jira-token`** CLI 옵션 추가 (2026-09-08)
 4. `confluence/api.js` — 모든 `auth.request()` → `auth.confluenceRequest()` 교체
 
-**mcp.json 최종 설정:**
+### wiki.coway.com + jira.coway.com 최종 설정 (2026-09-08)
+
+**mcp.json:**
 ```json
 "atlassian": {
   "command": "node",
@@ -39,12 +49,36 @@ originSessionId: 3f0c6952-6e6e-441a-af0b-3b29391b8e07
     "C:/Users/20020911/.claude/mcp-servers/atlassian-mcp/dist/index.js",
     "--domain", "jira.coway.com",
     "--email", "hjmoon@coway.com",
-    "--token", "ATATT...",
+    "--jira-token", "MDU2NzA5MzUyOTM2Ol...",
     "--confluence-domain", "wiki.coway.com",
-    "--confluence-token", "PAT_***REDACTED***"
+    "--confluence-token", "NzY2NTg2NzQ5OTE0Ol..."
   ]
 }
 ```
 
-**Why:** wiki.coway.com은 Data Center라 PAT + Bearer 인증 필요하고, Cloud와 달리 API 경로에 `/wiki` prefix가 없음
-**How to apply:** Claude Code 재시작하면 MCP가 로컬 패키지로 동작. PAT 만료 시 wiki.coway.com → Profile → Personal Access Tokens에서 재발급 후 mcp.json 업데이트
+**Why:** jira.coway.com도 Data Center(wiki와 같음). Cloud API token(`ATATT...`)로 Basic auth 시도하면 CAPTCHA_CHALLENGE 걸리며 계속 인증 실패. Data Center PAT(`MDU2...` base64 형태)를 Bearer로 써야 함.
+
+**How to apply:**
+- Claude Code 재시작하면 새 인증으로 MCP 접속.
+- PAT 만료 시: jira.coway.com → 프로필 → Personal Access Tokens 재발급 → `--jira-token` 값 교체.
+- **주의:** CAPTCHA 걸린 상태면 브라우저 세션과 API 세션이 별개라 API로는 해제 안 됨. Data Center PAT + Bearer 방식이 정공법.
+
+### 헬스체크 스크립트 인증 전환 (2026-09-08)
+- `check-mcp-tokens.ps1`: Atlassian 체크가 `--jira-token` 있으면 Bearer, 없으면 기존 Basic fallback
+- `update-mcp-token.ps1`: `Test-AtlassianToken`을 Bearer로 변경, 갱신 UI는 jira.coway.com 프로필로 열림
+
+### ⚠️ MCP 설정은 `~/.claude.json`이 실제 로드 대상 (2026-09-08 발견)
+
+**중요:** Claude Code는 `~/.claude.json`의 `mcpServers` 섹션을 실제로 spawn하고, `~/.claude/mcp.json`은 (적어도 이 환경에서는) **로드되지 않는다**.
+
+**증상:** mcp.json만 갱신하면 헬스체크는 OK 나오는데 실제 툴 호출은 401 계속.
+
+**Why:** `.claude.json`(홈 최상위)이 우선순위 상위. 초기 세팅 시 넣어둔 `accesstoken_20260420`(placeholder성 옛 토큰)이 5개월간 남아있었고, mcp.json의 새 PAT는 아무도 사용 안 함. 두 파일이 서로 다른 Atlassian MCP 구현체를 가리키기까지 함:
+- `.claude.json` → `uvx mcp-atlassian` (sooperset Python)
+- `mcp.json` → `node atlassian-mcp` (xuandev 커스텀)
+
+**How to apply:**
+- 토큰 교체 시 **반드시 `~/.claude.json`의 `mcpServers.atlassian.args`** 안의 `--jira-personal-token` 값을 바꿔야 실효
+- `check-mcp-tokens.ps1`도 `.claude.json`을 파싱하도록 향후 개선 필요 (현재는 mcp.json만 봄 → 거짓 OK 발생)
+- 재시작 없으면 기존 uvx 프로세스가 옛 토큰으로 계속 살아있으니 Claude Code 재시작 필수
+- 현재 실제 사용 중인 MCP는 **sooperset** (`mcp__atlassian__jira_*` 툴들이 이것). wiki(Confluence)는 이 서버에 안 붙어있고 Rovo(atlassian.net) 쪽으로 접근
