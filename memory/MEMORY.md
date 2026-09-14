@@ -21,3 +21,4 @@
 - [MCP 토큰 자동화 & wiki 연결 수정](project_mcp_token_automation.md) — 토큰 만료 자동감지 스크립트 완료, wiki.coway.com Data Center PAT Bearer 연결 수정 중 (2026-08-31)
 - [Claude Knowledge Archive 3중 백업](project_knowledge_archive.md) — G:/내 드라이브/claude-archive + GitHub hjmoon29/claude-knowledge-archive- 자동 sync (2026-09-07)
 - [지식 백업 전략 3중 조합 선호](feedback_backup_strategy.md) — 로컬Git+Drive+GitHub 조합, 토큰 자동 sanitize 필수 원칙
+- [Daily Focus 웹앱](project_daily_focus_app.md) — 뽀모도로+할일+메모 개인 생산성 앱, GitHub Pages 배포 (hjmoon29/daily-focus, 2026-09-09 생성)
