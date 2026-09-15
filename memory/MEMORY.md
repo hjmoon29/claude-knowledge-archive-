@@ -17,7 +17,8 @@
 - [LEGACT 수면 센서 민감정보 동의/미동의 협의](project_legact_consent.md) — 미동의→재동의 복귀 이슈·4가지 해결안·개인정보 수집 관점 검토 (2026-08-04, 논의 진행 중)
 - [스마트 매트리스 슬립싱크 & 파이어쉴드 슬립싱크 기획](project_slipsync_fireshield.md) — 두 신규 매트리스 제품 IoCare+ 앱 적용 기획 (제어유무·센서정책·등록플로우, 2026-08-28)
 - [슬립싱크 앱 설계 방향 정의 v260820](project_slipsync_app_design.md) — 스마트/일반 매트리스 슬립싱크 등록·투데이·디바이스·리포트 전체 정책 (수면단계 평가기준·수면유형 5종·데이터삭제 조건 포함)
-- [수면센서QA문의사항 답변 작업 (진행 중)](project_qa_answers_inprogress.md) — Q23~Q33 답변 작성 완료, Excel 파일 닫은 후 저장 재개 필요 (2026-08-31)
+- [수면센서QA문의사항 답변 작업](project_qa_answers_inprogress.md) — 260914 파일 Q38~Q41 답변 완료. 시트 구조·저장 방법(openpyxl)·이력 정리
+- [존칭·존댓말 사용](feedback_honorifics.md) — 사내 문서/사용자 대화 모두 존댓말 필수, 인물 언급 시 "님" 붙일 것 (2026-09-14)
 - [MCP 토큰 자동화 & wiki 연결 수정](project_mcp_token_automation.md) — 토큰 만료 자동감지 스크립트 완료, wiki.coway.com Data Center PAT Bearer 연결 수정 중 (2026-08-31)
 - [Claude Knowledge Archive 3중 백업](project_knowledge_archive.md) — G:/내 드라이브/claude-archive + GitHub hjmoon29/claude-knowledge-archive- 자동 sync (2026-09-07)
 - [지식 백업 전략 3중 조합 선호](feedback_backup_strategy.md) — 로컬Git+Drive+GitHub 조합, 토큰 자동 sanitize 필수 원칙
