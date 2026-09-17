@@ -23,3 +23,4 @@
 - [Claude Knowledge Archive 3중 백업](project_knowledge_archive.md) — G:/내 드라이브/claude-archive + GitHub hjmoon29/claude-knowledge-archive- 자동 sync (2026-09-07)
 - [지식 백업 전략 3중 조합 선호](feedback_backup_strategy.md) — 로컬Git+Drive+GitHub 조합, 토큰 자동 sanitize 필수 원칙
 - [Daily Focus 웹앱](project_daily_focus_app.md) — 뽀모도로+할일+메모 개인 생산성 앱, GitHub Pages 배포 (hjmoon29/daily-focus, 2026-09-09 생성)
+- [PC 교체 대비 스케줄 이관 계획](project_pc_migration_plan.md) — 원격 routines+로컬 Task 통합 전략, 수면센서 원격 이관 대기 (2026-09-16 수립, 실행 보류)
