@@ -1,18 +1,19 @@
 ﻿---
-name: Daily Focus 웹앱
-description: 뽀모도로+할일+메모 통합 개인 생산성 PWA (Vanilla JS 단일파일), GitHub Pages 배포 (hjmoon29/daily-focus)
+name: 부부젤라 (구 Daily Focus) 웹앱
+description: 부부 전용 D-Day·할일·기념일·가계부·기분 통합 PWA (Vanilla JS 단일파일), GitHub Pages 배포 (hjmoon29/vuvuzela)
 type: project
 originSessionId: b7a1fa91-0e80-4607-b53c-87648bd61e2e
 ---
-# Daily Focus 웹앱
+# 부부젤라 웹앱 (구 Daily Focus)
 
-**Why:** 사용자가 2026-09-09 다른 Claude 세션에서 만든 개인 생산성 PWA. 향후 세션에서 "focus 앱" 언급 시 이 프로젝트임.
+**Why:** 2026-09-09 개인 생산성 PWA(Daily Focus)로 시작 → 2026-09-18 부부 전용앱 "부부젤라"로 전면 개편. "focus 앱", "부부젤라", "daily-focus" 언급 시 모두 이 프로젝트.
 
 **How to apply:** 사용자가 focus 앱, daily-focus, 뽀모도로 관련 요청 시 이 리포지토리를 우선 참조. 로컬 클론은 `C:/Users/20020911/Documents/Projects/daily-focus/`. 커밋 시 GitHub Pages가 main 브랜치 루트를 자동 서빙하므로 push만 하면 배포됨.
 
 ## 위치
-- **GitHub**: https://github.com/hjmoon29/daily-focus
-- **배포 URL**: https://hjmoon29.github.io/daily-focus/ (GitHub Pages, main 브랜치 루트 서빙)
+- **GitHub**: https://github.com/hjmoon29/vuvuzela (2026-09-18 daily-focus에서 리네임)
+- **배포 URL**: https://hjmoon29.github.io/vuvuzela/ (GitHub Pages, main 브랜치 루트 서빙)
+- **구 URL**: hjmoon29.github.io/daily-focus/ → 404 (GitHub이 리포 URL은 301 리다이렉트하지만 Pages 사이트는 리다이렉트 안 함)
 - **로컬 클론**: `C:/Users/20020911/Documents/Projects/daily-focus/` (유일)
 - **최초 생성**: 2026-09-09 06:27 UTC (KST 15:27)
 - **통합 이력**: `~/Desktop/my-productivity-app/`는 같은 리포지토리 중복 클론이었음 → 2026-09-09 삭제
@@ -33,20 +34,26 @@ icon-192.svg, icon-512.svg
 README.md, .gitignore
 ```
 
-## 기능
-1. **할 일 리스트** — 추가/체크/삭제, 완료 카운터, localStorage key: `todos`
-2. **집중 타이머** — Focus 25 / Short Break 5 / Long Break 15 모드
-   - 시작/일시정지(재개)/리셋 + `document.title`에 실시간 표시
-   - 완료 시 Web Audio API로 660Hz 삐 소리 + `alert()`
-   - Focus 세션 완료 시 자동 카운트
-3. **오늘 세션 카운터** — localStorage key: `sessions` = `{[YYYY-MM-DD]: count}`
-4. **오늘 메모** — 400ms 디바운스 자동저장, localStorage key: `notes-YYYY-MM-DD` (일자별 분리)
+## 기능 (v3 부부젤라, 2026-09-18 개편)
+GNB 5탭 하단 고정 구조:
+1. **🏠 홈** — D-Day 히어로 카드, 함께한 일수, 오늘의 기분(각자 8종 이모지), 감사 한줄(각자), 남은 할일/이번달 지출 통계
+2. **✅ 할 일** — 담당자 배지(아내/남편/함께), 필터 칩, `us:todos` (owner 필드 포함)
+3. **💝 기념일** — 매년 반복 옵션, D-Day 자동 정렬, `us:anniversaries`
+4. **💰 가계부** — 수입/지출, 카테고리 이번달 합계, 담당자, `us:budget`
+5. **⚙️ 더보기** — 프로필(이름/만난날/결혼일/홈D-Day소스), 오늘의 공유 메모(`us:notes-YYYY-MM-DD`), JSON 백업/복원/초기화
 
-## UI 컬러/디자인
-- 다크 테마 (Tokyo Night 계열): bg `#0f1115`, panel `#1a1d24`, accent `#7aa2f7`, accent-2 `#9ece6a`, danger `#f7768e`
-- 3열 그리드 (`grid-template-columns: 1fr 1fr 1fr`), 900px 이하 1열 반응형
-- `env(safe-area-inset-*)` iOS notch 대응
-- 44px 최소 터치 영역 (모바일)
+**데이터 네임스페이스**: 모든 신규 키는 `us:` 프리픽스 (`us:profile`, `us:todos`, `us:anniversaries`, `us:budget`, `us:mood-DATE`, `us:grat-DATE`, `us:notes-DATE`)
+**마이그레이션**: 기존 `todos` → `us:todos` 자동 이관 (owner='both'), `us:migrated` 플래그로 1회만 실행
+**제거된 기능**: 뽀모도로 타이머, Wake Lock, 세션 카운터 (개인 생산성 요소)
+
+## 이전 기능 (v1-v2, 삭제됨)
+- Pomodoro 25/5/15 타이머, sessions 카운터 — 부부 공동 앱과 맞지 않아 제거
+
+## UI 컬러/디자인 (v3)
+- 다크 웜톤: bg `#14111a`, panel `#1e1a26`, accent `#ff8fab`(핑크), accent-2 `#a29bfe`(라벤더), accent-3 `#ffc078`(피치)
+- 담당자 컬러: wife `#ff8fab`, husband `#7aa2f7`, both `#c8a2ff`
+- 단일 컬럼 세로 스크롤 + 하단 고정 GNB (safe-area-inset-bottom 대응)
+- max-width 720px 중앙 정렬, body bottom padding = `calc(96px + env(safe-area-inset-bottom))` GNB 공간 확보
 
 ## 해결된 이슈 (2026-09-09 커밋 4e8ec98)
 - **타이머 정확도**: `Date.now()` 기반 종료시각(`endAt`) 계산 → 백그라운드 throttle 무관하게 정확

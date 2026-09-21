@@ -22,6 +22,6 @@
 - [MCP 토큰 자동화 & wiki 연결 수정](project_mcp_token_automation.md) — 토큰 만료 자동감지 스크립트 완료, wiki.coway.com Data Center PAT Bearer 연결 수정 중 (2026-08-31)
 - [Claude Knowledge Archive 3중 백업](project_knowledge_archive.md) — G:/내 드라이브/claude-archive + GitHub hjmoon29/claude-knowledge-archive- 자동 sync (2026-09-07)
 - [지식 백업 전략 3중 조합 선호](feedback_backup_strategy.md) — 로컬Git+Drive+GitHub 조합, 토큰 자동 sanitize 필수 원칙
-- [Daily Focus 웹앱](project_daily_focus_app.md) — 뽀모도로+할일+메모 개인 생산성 앱, GitHub Pages 배포 (hjmoon29/daily-focus, 2026-09-09 생성)
+- [부부젤라 (Vuvuzela) 웹앱](project_daily_focus_app.md) — 부부 전용 D-Day·할일·기념일·가계부·기분 통합 PWA, GNB 5탭, 라이트 테마, GitHub Pages 배포 (hjmoon29/vuvuzela, 2026-09-18 리네임)
 - [PC 교체 대비 스케줄 이관 계획](project_pc_migration_plan.md) — 원격 routines+로컬 Task 통합 전략, 수면센서 원격 이관 대기 (2026-09-16 수립, 실행 보류)
 - [Python 3.12 로컬 설치](project_python_install.md) — Python 3.12.10 + openpyxl/pandas/requests/Pillow/xlsxwriter 설치 완료. xlsx·API·데이터 분석에 활용 가능 (2026-09-17)
