@@ -12,6 +12,7 @@
 - [IoT 기획 Google Drive 폴더 구조 및 핵심 문서](project_gdrive_iot_docs.md) — 01.IoT기획 공유폴더(1179폴더/3427파일), 핵심 스프레드시트 ID, 매트리스 모델/기능 현황, 토큰 갱신법
 - [Figma 매일 학습 선호](feedback_figma_learning.md) — 거의 매일 Figma 전체 파일 재학습·버전 최신화 요청 (자동화 대신 대화 시작 시 제안)
 - [Confluence wiki 업데이트 워크플로우](project_wiki_workflow.md) — wiki.coway.com 사내 Confluence curl+PowerShell REST API 방식 (Rovo MCP 미지원)
+- [IoT IMS (IoCare 통합관리시스템)](reference_iot_ims.md) — 사내 어드민(ims.iot.coway.com), IoCare/NECOA 2종, 플랫폼·공지·다국어·소모품 관리, IoT플랫폼개발팀 총괄
 - [CWIOTSVC Wiki 전체 구조 맵](project_wiki_cwiotsvc_structure.md) — IoT 서비스 스페이스 구조·36개 제품·23개 서비스고도화·주요 논의 페이지ID (2026-09-21 재학습, 최근 1주일 17건 변경·신규 프로젝트 3개[대만정수기·더블케어비데·벽걸이에어컨]·프리박스 펫 킥오프)
 - [IoCare+ 지식베이스 챗봇 개발](project_iocare_chatbot.md) — RAG 챗봇 개발 현황, 임베딩 저장 미완료(Voyage AI rate limit), 다음 단계 정리 (2026-08-03)
 - [LEGACT 수면 센서 민감정보 동의/미동의 협의](project_legact_consent.md) — 미동의→재동의 복귀 이슈·4가지 해결안·개인정보 수집 관점 검토 (2026-08-04, 논의 진행 중)
@@ -23,5 +24,7 @@
 - [Claude Knowledge Archive 3중 백업](project_knowledge_archive.md) — G:/내 드라이브/claude-archive + GitHub hjmoon29/claude-knowledge-archive- 자동 sync (2026-09-07)
 - [지식 백업 전략 3중 조합 선호](feedback_backup_strategy.md) — 로컬Git+Drive+GitHub 조합, 토큰 자동 sanitize 필수 원칙
 - [부부젤라 (Vuvuzela) 웹앱](project_daily_focus_app.md) — 부부 전용 D-Day·할일·기념일·가계부·기분 통합 PWA, GNB 5탭, 라이트 테마, GitHub Pages 배포 (hjmoon29/vuvuzela, 2026-09-18 리네임)
+- [쇠질모드 (Exercise) 웹앱](project_swijil_mode_app.md) — 운동용 미니멀 시계+스톱워치 PWA, 블랙&화이트, 세로/가로 별도 레이아웃, Wake Lock, hjmoon29/exercise
 - [PC 교체 대비 스케줄 이관 계획](project_pc_migration_plan.md) — Figma/Wiki 주간학습 원격→로컬 이관 완료(2026-09-21). 원격 sandbox는 Google API만 허용해 외부 API 호출 불가 판명. ClaudeWeekly Figma/Wiki 로컬 Task 신설.
 - [Python 3.12 로컬 설치](project_python_install.md) — Python 3.12.10 + openpyxl/pandas/requests/Pillow/xlsxwriter 설치 완료. xlsx·API·데이터 분석에 활용 가능 (2026-09-17)
+- [코웨이 Claude Code 구독 전환 완료](project_claude_code_subscription.md) — AWS Bedrock PoC 조기 종료 → Anthropic 정액 구독 전환 완료, 담당 IT서비스개발팀 유주연 (2026-10-01)

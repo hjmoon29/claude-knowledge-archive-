@@ -25,12 +25,32 @@ Anthropic 클라우드 routine sandbox는 **Google API만 outbound 허용**. Fig
 | trig_013QbTcoPH3K89Vpj9CpcYPm | 모션베드 26.8.1 Jira 답변 | 매일 08:10 | ⛔ Disabled | 8월 이후 미사용, 삭제 대기 |
 
 ### 💻 로컬 Windows Task Scheduler (Coway/Claude 관련)
-| TaskName | 스케줄 | 상태 | 실행 파일 |
-|---|---|---|---|
-| **ClaudeWeeklyFigma** | 매주 월 09:00 | ✅ Ready | `C:\Users\20020911\scripts\weekly_figma.ps1` → `weekly_figma.py` |
-| **ClaudeWeeklyWiki** | 매주 월 09:00 | ✅ Ready | `C:\Users\20020911\scripts\weekly_wiki.ps1` → `weekly_wiki.py` |
-| ClaudeKnowledgeArchive | 매일 09:30 | ✅ Ready | `G:\내 드라이브\claude-archive\scripts\archive-knowledge.ps1` |
-| ClaudeMCPTokenCheck | 매일 08:15 | ✅ Ready | `C:\Users\20020911\.claude\check-mcp-tokens.ps1` |
+| 순서 | TaskName | 시각 | 상태 | 실행 파일 |
+|---|---|---|---|---|
+| 1 | ClaudeMCPTokenCheck | 매일 **11:30** | ✅ Ready, WakeToRun | `C:\Users\20020911\.claude\check-mcp-tokens.ps1` |
+| 2 | ClaudeKnowledgeArchive | 매일 **11:33** | ✅ Ready, WakeToRun | `G:\내 드라이브\claude-archive\scripts\archive-knowledge.ps1` |
+| 3 | **ClaudeWeeklyWiki** | 매일 **11:36** | ✅ Ready, WakeToRun | `C:\Users\20020911\scripts\weekly_wiki.ps1` → `weekly_wiki.py` |
+| 4 | **ClaudeWeeklyFigma** | 매일 **11:40** | ✅ Ready, WakeToRun | `C:\Users\20020911\scripts\weekly_figma.ps1` → `weekly_figma.py` |
+| 5 | **ClaudeDailySummary** | 매일 **17:00** | ✅ Ready, WakeToRun | `C:\Users\20020911\scripts\daily_summary.ps1` → `daily_summary.py` |
+
+**ClaudeDailySummary 상세 (2026-10-01 신설)**:
+- 역할: 당일 Claude 작업 요약(B안) + 사용량 리포트(C안) 통합
+- 데이터 소스: Session JSONL (`projects/C--Users-20020911/*.jsonl`), 메모리 디렉토리, `scripts/logs/`, token-check.log
+- 리포트 내용: 모델별 토큰 사용량, 시간대별 활동, 당일 메모리 변경, 오전 자동화 결과, 미완료 작업 상태, 내일 할 일 제안
+- 비용 추정: Opus/Sonnet/Haiku 요율로 환산 (정액구독이므로 참고용)
+- 발송: `hjmoon@coway.com` Gmail (제목 예: "[Claude 일일요약] 2026-10-01 - 토큰 22M, 메시지 99건, 메모리 변경 3개")
+- TimeLimit=30분 (가벼운 작업)
+- 2026-10-01 첫 테스트 성공 (99 메시지, 22.8M 토큰, 추정비용 $17.29)
+
+**2026-10-01 변경 요약:**
+- 4개 작업 모두 **매일 실행**으로 통일 (이전 Figma/Wiki는 주간)
+- **11:30~11:40 구간에 시차 배치** (3~4분 간격)
+  - 순서 근거: 토큰 갱신(전제조건) → 백업 → 가벼운 조회 → 무거운 조회
+- **WakeToRun** 활성화 (대기모드 자동 깨우기)
+- **StartWhenAvailable** 활성화 (놓친 작업 복구 실행)
+- **AllowStartIfOnBatteries** 활성화 (배터리 전원에서도 실행)
+- 실행 시간 한도 2시간 (TimeLimit=PT2H)
+- 작업명 "Weekly"는 유지되지만 실제로는 매일 실행 (이름만 레거시)
 
 **2026-09-22 삭제:** `수면센서 26.9 JIRA 답변 메일`, `JiraToSheets-HourlyUpdate` (관련 스크립트 파일은 유지)
 
@@ -63,10 +83,11 @@ Anthropic 클라우드 routine sandbox는 **Google API만 outbound 허용**. Fig
 - [ ] Claude Code CLI 설치 + `~/.claude/mcp.json` 복원 (백업 필요)
 - [ ] Python 3.12 설치 (openpyxl/pandas/requests/Pillow/xlsxwriter)
 - [ ] `C:\Users\20020911\scripts\` 폴더 통째 복사
-- [ ] `ClaudeWeeklyFigma` Task 재등록 (매주 월 09:00, `weekly_figma.ps1`)
-- [ ] `ClaudeWeeklyWiki` Task 재등록 (매주 월 09:00, `weekly_wiki.ps1`)
-- [ ] `ClaudeMCPTokenCheck` Task 재등록 (매일 08:15, `check-mcp-tokens.ps1`)
-- [ ] Google Drive 설치 + `G:\내 드라이브\claude-archive\` 동기화 대기 + `ClaudeKnowledgeArchive` Task 재등록 (매일 09:30)
+- [ ] `ClaudeMCPTokenCheck` Task 재등록 (매일 11:30, `check-mcp-tokens.ps1`, WakeToRun+StartWhenAvailable+AllowStartIfOnBatteries)
+- [ ] Google Drive 설치 + `G:\내 드라이브\claude-archive\` 동기화 대기 + `ClaudeKnowledgeArchive` Task 재등록 (매일 11:33, 동일 옵션)
+- [ ] `ClaudeWeeklyWiki` Task 재등록 (매일 11:36, `weekly_wiki.ps1`, 동일 옵션)
+- [ ] `ClaudeWeeklyFigma` Task 재등록 (매일 11:40, `weekly_figma.ps1`, 동일 옵션)
+- [ ] `ClaudeDailySummary` Task 재등록 (매일 17:00, `daily_summary.ps1`, 동일 옵션, TimeLimit 30분)
 
 ## 원격 정리 (사용자 수동 작업)
 https://claude.ai/code/routines 에서 아래 3개 routine 완전 삭제:
