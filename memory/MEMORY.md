@@ -28,3 +28,4 @@
 - [PC 교체 대비 스케줄 이관 계획](project_pc_migration_plan.md) — Figma/Wiki 주간학습 원격→로컬 이관 완료(2026-09-21). 원격 sandbox는 Google API만 허용해 외부 API 호출 불가 판명. ClaudeWeekly Figma/Wiki 로컬 Task 신설.
 - [Python 3.12 로컬 설치](project_python_install.md) — Python 3.12.10 + openpyxl/pandas/requests/Pillow/xlsxwriter 설치 완료. xlsx·API·데이터 분석에 활용 가능 (2026-09-17)
 - [코웨이 Claude Code 구독 전환 완료](project_claude_code_subscription.md) — AWS Bedrock PoC 조기 종료 → Anthropic 정액 구독 전환 완료, 담당 IT서비스개발팀 유주연 (2026-10-01)
+- [네이버웍스 알림 발송 준비](project_naverworks_notify.md) — Bot API 2.0 JWT 모듈·설정템플릿·가이드 작성 완료, 자격증명 발급 대기 (2026-10-02)
