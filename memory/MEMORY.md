@@ -9,7 +9,7 @@
 - [IoCare+ 장소설정 기획서 v1.05](project_iocare_loc_planning.md) — LOC 장소설정 19개 섹션 전체 정책 (장소선택/추가/관리/멤버초대/QR/제품관리 등)
 - [IoCare+ 제품등록 기획서 v1.13](project_iocare_product_registration.md) — 점유인증·재등록 차단(EM005)·Tuya 제한·장소이동 정책
 - [IoCare+ BLE Only 제품 정책](project_iocare_ble_products.md) — 매트리스·비데·모션베드 BLE 연결/공유/동시제어/데이터동기화 정책 + WiFi 비교
-- [IoT 기획 Google Drive 폴더 구조 및 핵심 문서](project_gdrive_iot_docs.md) — 01.IoT기획 공유폴더(1179폴더/3427파일), 핵심 스프레드시트 ID, 매트리스 모델/기능 현황, 토큰 갱신법
+- [IoT 기획 Google Drive 폴더 구조 및 핵심 문서](project_gdrive_iot_docs.md) — 공유드라이브 전수(2026-10-02): 5220폴더/27185파일, 10 top-level, 핵심 ID·토큰(drive.readonly)·로컬캐시 경로
 - [Figma 매일 학습 선호](feedback_figma_learning.md) — 거의 매일 Figma 전체 파일 재학습·버전 최신화 요청 (자동화 대신 대화 시작 시 제안)
 - [Confluence wiki 업데이트 워크플로우](project_wiki_workflow.md) — wiki.coway.com 사내 Confluence curl+PowerShell REST API 방식 (Rovo MCP 미지원)
 - [IoT IMS (IoCare 통합관리시스템)](reference_iot_ims.md) — 사내 어드민(ims.iot.coway.com), IoCare/NECOA 2종, 플랫폼·공지·다국어·소모품 관리, IoT플랫폼개발팀 총괄
@@ -29,3 +29,5 @@
 - [Python 3.12 로컬 설치](project_python_install.md) — Python 3.12.10 + openpyxl/pandas/requests/Pillow/xlsxwriter 설치 완료. xlsx·API·데이터 분석에 활용 가능 (2026-09-17)
 - [코웨이 Claude Code 구독 전환 완료](project_claude_code_subscription.md) — AWS Bedrock PoC 조기 종료 → Anthropic 정액 구독 전환 완료, 담당 IT서비스개발팀 유주연 (2026-10-01)
 - [네이버웍스 알림 발송 준비](project_naverworks_notify.md) — Bot API 2.0 JWT 모듈·설정템플릿·가이드 작성 완료, 자격증명 발급 대기 (2026-10-02)
+- [Figma 파일 쓰기 능력](reference_figma_write_capability.md) — REST API·설치된 MCP 모두 읽기전용. 쓰기는 Figma Plugin(manifest.json+code.js) 수동 Import만 가능
+- [claude-talk-to-figma-mcp 세팅](project_figma_talk_setup.md) — Figma 직접 쓰기 MCP 세팅 완료(Bun+WebSocket+Companion Plugin), 매트리스 v1.12 작업안 반영 대기 (2026-10-06)
