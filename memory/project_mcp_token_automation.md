@@ -15,7 +15,31 @@ originSessionId: 3f0c6952-6e6e-441a-af0b-3b29391b8e07
 - `~/.claude/get-sheets-token.ps1` — Google Sheets OAuth 재인증 (refresh_token 재발급)
 - `~/.claude/token-expiry.json` — 만료일 기록 (Figma/Atlassian 둘 다 2026-11-29)
 - `~/.claude/token-check.log` — 실행 로그 (매일 append)
-- Task Scheduler: `ClaudeMCPTokenCheck` 등록 완료 (매일 08:15)
+- Task Scheduler: `ClaudeMCPTokenCheck` 등록 완료 (매일 **11:30** 변경됨, 로그 기준)
+
+### MCP 서버 프로세스 생존 체크 (2026-10-06 추가)
+토큰 유효성 체크(check-mcp-tokens.ps1)와 **별개 레이어**로, 각 MCP 서버 프로세스 자체의 기동 가능성을 검증.
+
+- `~/.claude/mcp-health-check.ps1` — 각 MCP 서버 (node: 스크립트 존재+syntax check / npx: 캐시 존재 또는 20s spawn test). `mcp-health.json`에 결과 저장.
+- `~/.claude/mcp-health-hook.ps1` — SessionStart hook. json 읽어 `additionalContext`로 Claude에 주입.
+- `~/.claude/mcp-health.json`, `~/.claude/mcp-health.log` — 최신 상태 + 누적 로그
+- **settings.json의 SessionStart hook에 등록 완료** — 세션 시작마다 MCP 상태를 컨텍스트에 삽입
+- **check-mcp-tokens.ps1 말미에서 자동 호출** — 매일 11:30 cron에 통합. 비정상 서버 발견 시 Toast 알림
+
+**Why:** 토큰은 멀쩡해도 npx 기반 MCP 서버 프로세스가 세션 중 크래시하면 토큰 체크로는 감지 불가. 이번 2026-10-06 세션에서 gmail/googleSheets MCP 중단 사건을 계기로 추가.
+
+**How to apply:** 세션 시작 때 ❌/⏱️ 아이콘 보이면 즉시 세션 재시작 또는 수동 복구. 비정상 서버는 `mcp-health.log` 최신 항목 확인. 모든 체크 OK인데 세션 내에서 끊긴 경우 → 재시작으로 해결됨 (프로세스 레벨 이슈)
+
+### 점심시간 통합 상태 메일 (2026-10-06 추가)
+토큰 체크 + MCP 서버 health + 지식/메모리 아카이브 **세 작업 결과를 하나의 메일**로 묶어서 매일 발송.
+
+- `C:\Users\20020911\scripts\lunch_status_mail.py` + `.ps1` — Gmail OAuth로 hjmoon@coway.com 발송
+- Scheduled Task: **`ClaudeLunchStatusMail`** 매일 **11:45 KST** (11:30 토큰체크·11:33 아카이브 완료 후 실행)
+- 메일 제목: `[Claude 점심상태] YYYY-MM-DD - ✅ 전체정상` 또는 `⚠️ 토큰⚠️,MCP N개 비정상,백업실패` 등 이슈 요약
+- 읽는 입력: `token-check.log` 당일 라인, `mcp-health.json`, `claude-archive\logs\sync-YYYY-MM.log` 당일 블록
+- **주의:** mcp-health.json이 UTF-8 BOM으로 쓰여서 Python에서 읽을 땐 `encoding="utf-8-sig"` 필수
+
+**중요:** PowerShell 5.1은 BOM 없는 UTF-8 파일에서 한글 때문에 parse error 발생. 신규 ps1 생성 시 **UTF-8 BOM 포함 저장 필수** (ex. `[System.IO.File]::WriteAllText(path, content, [System.Text.UTF8Encoding]::new($true))`)
 
 ### 토큰 현황 (2026-09-08 기준)
 | 서비스 | 토큰 | 인증 방식 | 만료일 |

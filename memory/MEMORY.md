@@ -31,3 +31,6 @@
 - [네이버웍스 알림 발송 준비](project_naverworks_notify.md) — Bot API 2.0 JWT 모듈·설정템플릿·가이드 작성 완료, 자격증명 발급 대기 (2026-10-02)
 - [Figma 파일 쓰기 능력](reference_figma_write_capability.md) — REST API·설치된 MCP 모두 읽기전용. 쓰기는 Figma Plugin(manifest.json+code.js) 수동 Import만 가능
 - [claude-talk-to-figma-mcp 세팅](project_figma_talk_setup.md) — Figma 직접 쓰기 MCP 세팅 완료(Bun+WebSocket+Companion Plugin), 매트리스 v1.12 작업안 반영 대기 (2026-10-06)
+- [주간보고 Google 문서 & 담당 파트](reference_weekly_report.md) — 팀 주간보고 Docs URL, 담당 파트: LIVING·BEREX (2026-10-06)
+- [Claude 일일 요약 (daily_summary.py)](project_claude_daily_summary.md) — 17:10 KST Gmail 발송, 아카이브(index.html) + 백필 지원 (2026-10-06)
+- [소모품 정보 소스 문서 우선순위](reference_consumable_source_docs.md) — Figma+CW_IoCare_소모품_정의서가 1차, 소모품 콘텐츠 정의서는 참고용(deprecated)
