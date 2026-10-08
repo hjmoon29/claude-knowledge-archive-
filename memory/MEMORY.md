@@ -33,4 +33,7 @@
 - [claude-talk-to-figma-mcp 세팅](project_figma_talk_setup.md) — Figma 직접 쓰기 MCP 세팅 완료(Bun+WebSocket+Companion Plugin), 매트리스 v1.12 작업안 반영 대기 (2026-10-06)
 - [주간보고 Google 문서 & 담당 파트](reference_weekly_report.md) — 팀 주간보고 Docs URL, 담당 파트: LIVING·BEREX (2026-10-06)
 - [Claude 일일 요약 (daily_summary.py)](project_claude_daily_summary.md) — 17:10 KST Gmail 발송, 아카이브(index.html) + 백필 지원 (2026-10-06)
+- [Claude 멀티 PC 사용량 공유 Doc](project_cross_pc_usage_doc.md) — Mac·Win 등 PC별 일일 사용량을 공유 Claude Doc에 모아 교차 집계 (2026-10-08)
 - [소모품 정보 소스 문서 우선순위](reference_consumable_source_docs.md) — Figma+CW_IoCare_소모품_정의서가 1차, 소모품 콘텐츠 정의서는 참고용(deprecated)
+- [앱 데모 5종 (app-examples)](project_app_examples.md) — 마켓온/하우스/동네생활/머니로그/올인원 공개 웹 데모 (exercise0867.github.io/app-examples, 2026-10-07)
+- [앱 데모 v2 (5종 완전 분화)](project_app_examples_v2.md) — 톤·디자인·기능 전부 다르게 재설계한 로컬 프로토타입 (projects/app-examples-v2, 2026-10-07)
