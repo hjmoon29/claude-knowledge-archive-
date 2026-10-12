@@ -6,6 +6,8 @@ originSessionId: c3c5e961-995d-4876-8e5c-a0ae39d97d47
 ---
 # Figma 파일 쓰기 — 가능/불가능 명확한 구분
 
+> **2026-10-08 갱신: claude.ai Figma 커넥터의 `use_figma`(Plugin API JS 실행)로 직접 쓰기 가능 확인.** 소켓/플러그인 없이 바로 수정됨. 사용 전 `skill://figma/figma-use/SKILL.md` 리소스 로드 필수. 아래 '불가능' 내용은 그 이전 기준.
+
 ## 불가능 (아무리 요청해도 안 됨)
 
 - **Figma REST API**: 디자인 노드(FRAME/TEXT/SECTION/GROUP 등) 생성·수정 엔드포인트 **없음**

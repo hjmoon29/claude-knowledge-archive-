@@ -29,7 +29,7 @@
 - [Python 3.12 로컬 설치](project_python_install.md) — Python 3.12.10 + openpyxl/pandas/requests/Pillow/xlsxwriter 설치 완료. xlsx·API·데이터 분석에 활용 가능 (2026-09-17)
 - [코웨이 Claude Code 구독 전환 완료](project_claude_code_subscription.md) — AWS Bedrock PoC 조기 종료 → Anthropic 정액 구독 전환 완료, 담당 IT서비스개발팀 유주연 (2026-10-01)
 - [네이버웍스 알림 발송 준비](project_naverworks_notify.md) — Bot API 2.0 JWT 모듈·설정템플릿·가이드 작성 완료, 자격증명 발급 대기 (2026-10-02)
-- [Figma 파일 쓰기 능력](reference_figma_write_capability.md) — REST API·설치된 MCP 모두 읽기전용. 쓰기는 Figma Plugin(manifest.json+code.js) 수동 Import만 가능
+- [Figma 파일 쓰기 능력](reference_figma_write_capability.md) — claude.ai Figma 커넥터 use_figma로 직접 쓰기 가능(2026-10-08 확인), 이전엔 Plugin만
 - [claude-talk-to-figma-mcp 세팅](project_figma_talk_setup.md) — Figma 직접 쓰기 MCP 세팅 완료(Bun+WebSocket+Companion Plugin), 매트리스 v1.12 작업안 반영 대기 (2026-10-06)
 - [주간보고 Google 문서 & 담당 파트](reference_weekly_report.md) — 팀 주간보고 Docs URL, 담당 파트: LIVING·BEREX (2026-10-06)
 - [Claude 일일 요약 (daily_summary.py)](project_claude_daily_summary.md) — 17:10 KST Gmail 발송, 아카이브(index.html) + 백필 지원 (2026-10-06)
@@ -37,3 +37,5 @@
 - [소모품 정보 소스 문서 우선순위](reference_consumable_source_docs.md) — Figma+CW_IoCare_소모품_정의서가 1차, 소모품 콘텐츠 정의서는 참고용(deprecated)
 - [앱 데모 5종 (app-examples)](project_app_examples.md) — 마켓온/하우스/동네생활/머니로그/올인원 공개 웹 데모 (exercise0867.github.io/app-examples, 2026-10-07)
 - [앱 데모 v2 (5종 완전 분화)](project_app_examples_v2.md) — 톤·디자인·기능 전부 다르게 재설계한 로컬 프로토타입 (projects/app-examples-v2, 2026-10-07)
+- [Statusline 공식 rate_limits](reference_statusline_rate_limits.md) — statusline stdin의 5h/주간 공식 사용률·리셋시각, 시작화면은 캐시로 공유 (2026-10-08)
+- [팀원 명단](user_team_members.md) — 최린아·오가현·오종하·김태현·김보라·최유나·원창연님 (같은 팀, 2026-10-08)

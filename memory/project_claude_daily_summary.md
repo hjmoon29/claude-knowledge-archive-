@@ -37,6 +37,10 @@ originSessionId: 08e42ab2-9385-4159-8508-7732ca463e56
 - 이메일 상단에 "📚 전체 일일 요약 아카이브 보기" 링크 삽입
 - 백필: `python backfill_daily_archive.py` → 세션 JSONL에서 활동 날짜 감지해 전부 재생성
 
+## 계정 사용 한도 (2026-10-08 추가)
+- 일일 리포트·인덱스 상단에 '⏱ 계정 사용 한도' 박스: 5h/주간 사용률 + 리셋시각 (`~/.claude/rate-limits-cache.json`, statusline.py가 저장)
+- 일자별 JSON에 `rate_limits` 스냅샷 저장, 인덱스 테이블에 '5h / 주간 한도' 컬럼 (과거 날짜는 저장된 스냅샷만, 없으면 -)
+
 ## 수동 발송
 ```bash
 cd /c/Users/20020911/scripts && python daily_summary.py

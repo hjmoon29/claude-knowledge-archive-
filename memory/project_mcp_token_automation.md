@@ -106,3 +106,10 @@ originSessionId: 3f0c6952-6e6e-441a-af0b-3b29391b8e07
 - `check-mcp-tokens.ps1`도 `.claude.json`을 파싱하도록 향후 개선 필요 (현재는 mcp.json만 봄 → 거짓 OK 발생)
 - 재시작 없으면 기존 uvx 프로세스가 옛 토큰으로 계속 살아있으니 Claude Code 재시작 필수
 - 현재 실제 사용 중인 MCP는 **sooperset** (`mcp__atlassian__jira_*` 툴들이 이것). wiki(Confluence)는 이 서버에 안 붙어있고 Rovo(atlassian.net) 쪽으로 접근
+
+## 2026-10-12 정비
+- 실제 MCP 설정은 `~/.claude.json`(user 범위) + 홈 폴더 local 범위(figma·google-sheets·google-drive). `~/.claude/mcp.json`은 토큰 보관소로만 쓰임(check/update 스크립트가 읽음).
+- atlassian Jira PAT는 args → `env.JIRA_PERSONAL_TOKEN`으로 이동. update-mcp-token.ps1이 `~/.claude.json`도 함께 교체하도록 수정.
+- `settings.json` env `MCP_TIMEOUT=60000` (uvx/npx 콜드 스타트 30초 초과 대응).
+- mcp-health-check.ps1은 홈 폴더에서 `claude mcp list` 결과를 파싱(상태 ok/auth/fail/timeout). 매일 11:30 ClaudeMCPTokenCheck 작업이 호출. auth는 알림 제외, 훅에서 별도 표시.
+- 수정한 스크립트 백업: `*.bak-20261012`.
