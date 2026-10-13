@@ -27,3 +27,14 @@ originSessionId: 8ce9232a-cdfb-4b01-be53-d8aee2ebf4cb
 
 **Why**: 여러 PC를 번갈아 쓰며 일하는데 로컬 `daily_summary.py`는 그 PC 세션만 봐서 전체 사용량이 안 잡힘. 사내 공유 폴더(A안)·NAS가 Mac에서 접근 불편해 Claude Doc으로 선회.
 **How to apply**: 사용자가 "다른 PC 사용량까지 포함" 요청하면 이 Doc 링크 공유 + 저장소 테이블에 PC별 행 append. 새 PC 추가 시 Doc 안 `tools/README.md` 가이드대로 세팅 요청.
+
+## 2026-10-12 갱신: 공유 DB 방식으로 전환
+- 화면 https://claude.ai/artifact/3KiDAHTUN4KELhGbWQwtia 의 db 컬렉션 `usage`(문서 `<pc>__YYYY-MM-DD`), `account`(`acct__<pc>__날짜`)
+- 절차는 아티팩트 파일 `tools/README.md`. 이 PC 이름은 **windows**, 작업폴더 `~/Downloads/claude-daily-summary/` (summaries.json에 세션 요약)
+- "데일리써머리 업데이트" = export --machine windows → ArtifactData batch set (기존 문서는 if_version)
+- 이 PC엔 `~/.claude/usage-snapshots.jsonl` 없음 → account 업로드 없음 (statusline은 rate-limits-cache.json만 저장)
+- 메일 설정: ~/.config/claude-daily/gmail.json (daily_summary.py 자격 재사용, 2026-10-12). 전체 메일: DB usage+account를 out_dir로 받고 send all --from <dir>
+- 17:10 자동 합산 메일 (2026-10-12): 작업 스케줄러 `ClaudeAllPCsSummary` → scripts/daily_all_pcs.ps1 → Downloads/claude-daily-summary/send_all_pcs.py (이 PC 새 export + `db_cache/` 사본 합산 → send 오늘)
+- 헤드리스 `claude -p`에는 ArtifactData 없음(테스트 확인) → db_cache는 대화 세션에서 "데일리써머리 업데이트" 시 ArtifactData list(out_dir=db_cache)로 갱신해야 함
+- 기존 `ClaudeDailySummary`(이 PC 전용 메일)도 17:10에 그대로 돌아감
+- Mac 자동 반영 (2026-10-12): 통로 = Google Drive `G:/내 드라이브/claude-daily/{mac,mac-account,windows}`. Mac은 `mac_setup.sh`(같은 폴더) 1회 실행 → launchd 17:00 export+복사. send_all_pcs.py는 Drive·db_cache 중 generated 최신 파일 사용. Mac 설치 실행 여부 미확인
