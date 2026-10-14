@@ -38,3 +38,8 @@ originSessionId: 8ce9232a-cdfb-4b01-be53-d8aee2ebf4cb
 - 헤드리스 `claude -p`에는 ArtifactData 없음(테스트 확인) → db_cache는 대화 세션에서 "데일리써머리 업데이트" 시 ArtifactData list(out_dir=db_cache)로 갱신해야 함
 - 기존 `ClaudeDailySummary`(이 PC 전용 메일)도 17:10에 그대로 돌아감
 - Mac 자동 반영 (2026-10-12): 통로 = Google Drive `G:/내 드라이브/claude-daily/{mac,mac-account,windows}`. Mac은 `mac_setup.sh`(같은 폴더) 1회 실행 → launchd 17:00 export+복사. send_all_pcs.py는 Drive·db_cache 중 generated 최신 파일 사용. Mac 설치 실행 여부 미확인
+
+## 2026-10-14: 토큰 합계 기준 = 입력+출력+캐시 쓰기+캐시 읽기 전부 포함 (최종)
+- 오전에 잠시 "캐시 읽기 제외(basis: no_cache_read)"로 바꿨다가, 사용자가 Mac에서 전부 포함으로 되돌림 → Windows도 동일 적용
+- Windows claude_daily.py = 화면 tools/claude_daily.py(Mac 버전)와 동일. load_docs의 normalize()가 no_cache_read 문서를 전부 포함 기준으로 환산
+- Windows usage 10/14까지 DB 재업로드 완료. 화면도 Mac이 이미 원래 기준으로 재게시함

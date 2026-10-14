@@ -38,4 +38,5 @@
 - [앱 데모 5종 (app-examples)](project_app_examples.md) — 마켓온/하우스/동네생활/머니로그/올인원 공개 웹 데모 (exercise0867.github.io/app-examples, 2026-10-07)
 - [앱 데모 v2 (5종 완전 분화)](project_app_examples_v2.md) — 톤·디자인·기능 전부 다르게 재설계한 로컬 프로토타입 (projects/app-examples-v2, 2026-10-07)
 - [Statusline 공식 rate_limits](reference_statusline_rate_limits.md) — statusline stdin의 5h/주간 공식 사용률·리셋시각, 시작화면은 캐시로 공유 (2026-10-08)
+- [PC 문서 백업](project_pc_backup.md) — E:\Backup에 업무·그외 zip 압축 완료, 구글드라이브 업로드 남음 (2026-10-13)
 - [팀원 명단](user_team_members.md) — 최린아·오가현·오종하·김태현·김보라·최유나·원창연님 (같은 팀, 2026-10-08)
