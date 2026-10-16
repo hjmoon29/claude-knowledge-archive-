@@ -41,3 +41,4 @@
 - [PC 문서 백업](project_pc_backup.md) — E:\Backup에 업무·그외 zip 압축 완료, 구글드라이브 업로드 남음 (2026-10-13)
 - [팀원 명단](user_team_members.md) — 최린아·오가현·오종하·김태현·김보라·최유나·원창연님 (같은 팀, 2026-10-08)
 - [중국 ODM 판단 기준](feedback_china_odm_source.md) — KING CARE는 중국 매트리스 기획서(Figma 99_중국 ODM)만 기준, 국내 기획서 비교 금지
+- [숫자 전체 표기 선호](feedback_full_numbers.md) — 토큰 수치는 약어(12.1M) 대신 전체 값(12,147,244)으로

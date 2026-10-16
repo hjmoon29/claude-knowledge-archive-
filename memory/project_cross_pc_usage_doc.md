@@ -43,3 +43,7 @@ originSessionId: 8ce9232a-cdfb-4b01-be53-d8aee2ebf4cb
 - 오전에 잠시 "캐시 읽기 제외(basis: no_cache_read)"로 바꿨다가, 사용자가 Mac에서 전부 포함으로 되돌림 → Windows도 동일 적용
 - Windows claude_daily.py = 화면 tools/claude_daily.py(Mac 버전)와 동일. load_docs의 normalize()가 no_cache_read 문서를 전부 포함 기준으로 환산
 - Windows usage 10/14까지 DB 재업로드 완료. 화면도 Mac이 이미 원래 기준으로 재게시함
+
+## 2026-10-16: 화면에 'PC별 비교' 섹션 추가 (v12)
+- 기간(최근30일/이번달/전체)별 PC 합계 타일 + 날짜×PC 표(전체 숫자) + 비중 막대, PC별 마지막 업데이트 시각(24h 초과 시 빨간 '갱신 필요')
+- 확인: Drive `mac/` 폴더는 비어 있음(10/14 17:00에 mac-account만 복사됨) → Mac launchd의 usage 복사가 안 되는 상태, Mac 쪽 점검 필요
