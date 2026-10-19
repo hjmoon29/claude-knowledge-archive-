@@ -47,4 +47,4 @@ wiki.coway.com은 사내 자체 호스팅 Confluence Data Center — Atlassian R
 **How to apply:** 앞으로 wiki 페이지 읽기/생성/수정 요청 시 이 워크플로우 사용. 비밀번호는 사용자에게 직접 입력받을 것 (기억하지 않음).
 
 **2026-10-14 추가 (현행 방식):** 인증은 비밀번호 대신 Confluence PAT Bearer (`~/.claude/mcp.json`의 `NzgzNDQ1OTEzODcw…` 토큰). Python requests 사용 시 `Session().trust_env=False` 필수 — 기본값이면 ~/.netrc가 Authorization 헤더를 덮어써 401 발생. 한글 제목 검색은 curl(Git Bash)이 CP949로 인코딩하므로 Python으로.
-- 기획 사양 정리 페이지 형식 예시: 슬립싱크 406323539, 모션베드 406323763 (info 안내 + toc + 한눈에 보기 + 장별 정책표 + 확인 필요/불일치 status 매크로 + 목록 + 문서 이력)
+- 기획 사양 정리 페이지 형식 예시: 슬립싱크 406323539, 모션베드 406323763, 개인형 비데 후속(슬리믹·더매너) 405832885 (2026-10-19, 생성 스크립트 패턴: Python으로 storage XML 생성 후 POST /rest/api/content, ancestors=부모ID) (info 안내 + toc + 한눈에 보기 + 장별 정책표 + 확인 필요/불일치 status 매크로 + 목록 + 문서 이력)
