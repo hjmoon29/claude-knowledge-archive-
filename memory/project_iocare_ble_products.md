@@ -3,12 +3,15 @@ name: IoCare+ BLE Only 제품 정책
 description: 매트리스·비데·모션베드의 BLE 연결 정책, 장소 공유 시 동작 방식, WiFi 제품과의 차이
 type: project
 originSessionId: e343288d-b92a-4607-b5bd-fabc4e290d8f
+modified: 2026-10-21T02:07:09.947Z
 ---
 
 ## BLE Only 제품 목록
 - 매트리스 (Figma: cqHb1Abt601MqNEdscs5CY)
 - 모션베드 (Figma: KeNXCxOrYfxNwoltM2v9bG)
 - 개인형비데 (Figma: 6SYhOKv0VU32O6aVRCy3nq)
+  - **사용자 지정 범위 (2026-10-21)**: 더블케어 비데 업그레이드(BAS37-C/BAS38-C, 24.12.13 출시, BLE/MCU)도 BLE Only 개인형 비데로 간주. 따라서 개인형 비데 최초 = 더블케어 업그레이드(24.12) → 슬리믹(BAS49-A, 25.11.3) → 더매너 비데 플러스(BAS51-A, 26.4.30) → 더매너 비데(BAS50-A, 26.10.30)
+  - 앱 반영 순서 비교 시: 스마트 매트리스 S6+/S8+ IoCare 2.0 앱 배포 24.10월 중 > 더블케어 업그레이드 24.12 (위키 계획일 기준, 실제 배포일 미확인)
 
 ---
 
