@@ -33,7 +33,7 @@
 - [claude-talk-to-figma-mcp 세팅](project_figma_talk_setup.md) — Figma 직접 쓰기 MCP 세팅 완료(Bun+WebSocket+Companion Plugin), 매트리스 v1.12 작업안 반영 대기 (2026-10-06)
 - [주간보고 Google 문서 & 담당 파트](reference_weekly_report.md) — 팀 주간보고 Docs URL, 담당 파트: LIVING·BEREX (2026-10-06)
 - [Claude 일일 요약 (daily_summary.py)](project_claude_daily_summary.md) — 17:10 KST Gmail 발송, 아카이브(index.html) + 백필 지원 (2026-10-06)
-- [Claude 멀티 PC 사용량 공유 Doc](project_cross_pc_usage_doc.md) — Mac·Win 등 PC별 일일 사용량을 공유 Claude Doc에 모아 교차 집계 (2026-10-08)
+- [Claude 멀티 PC 사용량 공유 Doc](project_cross_pc_usage_doc.md) — Mac·Win 등 PC별 일일 사용량을 공유 Claude Doc에 모아 교차 집계 (2026-10-08, 10/22 Drive 자동 업로드 10:00·16:30)
 - [소모품 정보 소스 문서 우선순위](reference_consumable_source_docs.md) — Figma+CW_IoCare_소모품_정의서가 1차, 소모품 콘텐츠 정의서는 참고용(deprecated)
 - [앱 데모 5종 (app-examples)](project_app_examples.md) — 마켓온/하우스/동네생활/머니로그/올인원 공개 웹 데모 (exercise0867.github.io/app-examples, 2026-10-07)
 - [앱 데모 v2 (5종 완전 분화)](project_app_examples_v2.md) — 톤·디자인·기능 전부 다르게 재설계한 로컬 프로토타입 (projects/app-examples-v2, 2026-10-07)
@@ -43,4 +43,4 @@
 - [중국 ODM 판단 기준](feedback_china_odm_source.md) — KING CARE는 중국 매트리스 기획서(Figma 99_중국 ODM)만 기준, 국내 기획서 비교 금지
 - [숫자 전체 표기 선호](feedback_full_numbers.md) — 토큰 수치는 약어(12.1M) 대신 전체 값(12,147,244)으로
 - [시트 병합 셀 확인](feedback_sheet_merged_cells.md) — 소모품 정의서 빈칸은 병합일 수 있음, include_grid_data로 merges 확인
-- [업무 봇 (bot-hub)](project_work_bot.md) — 구 봇 허브, Jira 하위문서·기획 사양 정리(wiki)·QA 대응(엑셀 메일·예약)·토큰 리포트, 미푸시 (2026-10-20)
+- [업무 봇 (bot-hub)](project_work_bot.md) — 구 봇 허브, Jira 하위문서·기획 사양 정리(wiki)·QA 대응(엑셀 메일·예약)·토큰 리포트·IoT IMS 조회(10/22), 코웨이 디자인 통합·창없는 실행(10/23), 미푸시

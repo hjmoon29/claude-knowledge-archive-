@@ -47,3 +47,8 @@ originSessionId: 8ce9232a-cdfb-4b01-be53-d8aee2ebf4cb
 ## 2026-10-16: 화면에 'PC별 비교' 섹션 추가 (v12)
 - 기간(최근30일/이번달/전체)별 PC 합계 타일 + 날짜×PC 표(전체 숫자) + 비중 막대, PC별 마지막 업데이트 시각(24h 초과 시 빨간 '갱신 필요')
 - 확인: Drive `mac/` 폴더는 비어 있음(10/14 17:00에 mac-account만 복사됨) → Mac launchd의 usage 복사가 안 되는 상태, Mac 쪽 점검 필요
+
+## 2026-10-22: Drive 자동 업로드 10:00·16:30
+- Windows: 작업 스케줄러 `ClaudeDriveUpload` → scripts/upload_daily_drive.ps1 (export → G:/내 드라이브/claude-daily/windows, 로그 scripts/logs/drive_upload.log, PS 5.1용 UTF-8 BOM 필수)
+- Mac: Drive의 mac_setup.sh를 10:00·16:30 launchd로 수정 — Mac에서 `bash mac_setup.sh` 1회 재실행해야 적용 (이전 17:00 예약을 덮어씀)
+- 업무 봇 기간 리포트(report)는 Drive 폴더·db_cache 중 최신을 읽음
