@@ -113,3 +113,9 @@ originSessionId: 3f0c6952-6e6e-441a-af0b-3b29391b8e07
 - `settings.json` env `MCP_TIMEOUT=60000` (uvx/npx 콜드 스타트 30초 초과 대응).
 - mcp-health-check.ps1은 홈 폴더에서 `claude mcp list` 결과를 파싱(상태 ok/auth/fail/timeout). 매일 11:30 ClaudeMCPTokenCheck 작업이 호출. auth는 알림 제외, 훅에서 별도 표시.
 - 수정한 스크립트 백업: `*.bak-20261012`.
+
+## 2026-10-23: stdio MCP 서버 로컬 설치 전환
+- gmail·google-drive·google-sheets: `npx -y` → `node C:/nvm4w/nodejs/node_modules/<pkg>/dist/index.js` (npm i -g, 버전 동일 1.1.11 / 2025.1.14 / 2.0.1)
+- atlassian: `uvx mcp-atlassian` → `C:/Users/20020911/.local/bin/mcp-atlassian.exe` (uv tool install). 이유: 시작 때마다 패키지 확인으로 CONNECT_TIMEOUT(60s)·중간 끊김
+- 백업: `~/.claude.json.bak_mcp_<날짜시각>`. 패키지 업데이트는 `npm i -g <pkg>@latest` / `uv tool upgrade mcp-atlassian`
+- Claude Code 대화형 모드는 stdio 서버가 중간에 죽으면 자동 재시작 안 함(공식 문서). 복구는 `/mcp reconnect all`(v2.1.284+)

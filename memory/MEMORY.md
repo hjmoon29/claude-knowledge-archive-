@@ -20,7 +20,7 @@
 - [슬립싱크 앱 설계 방향 정의 v260820](project_slipsync_app_design.md) — 스마트/일반 매트리스 슬립싱크 등록·투데이·디바이스·리포트 전체 정책 (수면단계 평가기준·수면유형 5종·데이터삭제 조건 포함)
 - [수면센서QA문의사항 답변 작업](project_qa_answers_inprogress.md) — 260914 파일 Q38~Q41 답변 완료. 시트 구조·저장 방법(openpyxl)·이력 정리
 - [존칭·존댓말 사용](feedback_honorifics.md) — 사내 문서/사용자 대화 모두 존댓말 필수, 인물 언급 시 "님" 붙일 것 (2026-09-14)
-- [MCP 토큰 자동화 & wiki 연결 수정](project_mcp_token_automation.md) — 토큰 만료 자동감지 스크립트 완료, wiki.coway.com Data Center PAT Bearer 연결 수정 중 (2026-08-31)
+- [MCP 토큰 자동화 & wiki 연결 수정](project_mcp_token_automation.md) — 토큰 만료 자동감지 스크립트 완료, wiki 연결, stdio MCP 4종 로컬 설치 전환(10/23)
 - [Claude Knowledge Archive 3중 백업](project_knowledge_archive.md) — G:/내 드라이브/claude-archive + GitHub hjmoon29/claude-knowledge-archive- 자동 sync (2026-09-07)
 - [지식 백업 전략 3중 조합 선호](feedback_backup_strategy.md) — 로컬Git+Drive+GitHub 조합, 토큰 자동 sanitize 필수 원칙
 - [부부젤라 (Vuvuzela) 웹앱](project_daily_focus_app.md) — 부부 전용 D-Day·할일·기념일·가계부·기분 통합 PWA, GNB 5탭, 라이트 테마, GitHub Pages 배포 (hjmoon29/vuvuzela, 2026-09-18 리네임)
