@@ -19,6 +19,7 @@
 - [스마트 매트리스 슬립싱크 & 파이어쉴드 슬립싱크 기획](project_slipsync_fireshield.md) — 두 신규 매트리스 제품 IoCare+ 앱 적용 기획 (제어유무·센서정책·등록플로우, 2026-08-28)
 - [슬립싱크 앱 설계 방향 정의 v260820](project_slipsync_app_design.md) — 스마트/일반 매트리스 슬립싱크 등록·투데이·디바이스·리포트 전체 정책 (수면단계 평가기준·수면유형 5종·데이터삭제 조건 포함)
 - [수면센서QA문의사항 답변 작업](project_qa_answers_inprogress.md) — 260914 파일 Q38~Q41 답변 완료. 시트 구조·저장 방법(openpyxl)·이력 정리
+- [항상 한국어로 대화](feedback_korean_only.md) — 모든 응답은 한국어(존댓말), 영어 응답 금지 (2026-10-26)
 - [존칭·존댓말 사용](feedback_honorifics.md) — 사내 문서/사용자 대화 모두 존댓말 필수, 인물 언급 시 "님" 붙일 것 (2026-09-14)
 - [MCP 토큰 자동화 & wiki 연결 수정](project_mcp_token_automation.md) — 토큰 만료 자동감지 스크립트 완료, wiki 연결, stdio MCP 4종 로컬 설치 전환(10/23)
 - [Claude Knowledge Archive 3중 백업](project_knowledge_archive.md) — G:/내 드라이브/claude-archive + GitHub hjmoon29/claude-knowledge-archive- 자동 sync (2026-09-07)
@@ -43,4 +44,6 @@
 - [중국 ODM 판단 기준](feedback_china_odm_source.md) — KING CARE는 중국 매트리스 기획서(Figma 99_중국 ODM)만 기준, 국내 기획서 비교 금지
 - [숫자 전체 표기 선호](feedback_full_numbers.md) — 토큰 수치는 약어(12.1M) 대신 전체 값(12,147,244)으로
 - [시트 병합 셀 확인](feedback_sheet_merged_cells.md) — 소모품 정의서 빈칸은 병합일 수 있음, include_grid_data로 merges 확인
-- [업무 봇 (bot-hub)](project_work_bot.md) — 구 봇 허브, Jira 하위문서·기획 사양 정리(wiki)·QA 대응(엑셀 메일·예약)·토큰 리포트·IoT IMS 조회(10/22), 코웨이 디자인 통합·창없는 실행(10/23), 미푸시
+- [IoT업무봇(Beta) (bot-hub)](project_work_bot.md) — 10/27 개명·팀 배포 zip·설치 포털 URL(artifact QCbZVKMQ), 구 봇 허브, Jira 하위문서·기획 사양 정리(wiki)·QA 대응(엑셀 메일·예약)·토큰 리포트·IoT IMS 조회(10/22), 코웨이 디자인 통합·창없는 실행(10/23), 미푸시
+- [업무 봇 화면 주 사용](feedback_work_bot_primary.md) — 반복 업무는 대화창보다 업무 봇 화면에서, 대화창은 봇 수정·봇에 없는 일 (2026-10-26)
+- [Edge Claude 확장 연결](project_edge_claude_extension.md) — 크롬 확장 회사 차단→Edge 설치, Native host 등록·Edge 연결 성공 (2026-10-26)

@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 2901365a-934a-4b84-9da5-7527e2f9182c
-  modified: 2026-10-22T07:28:27.231Z
+  modified: 2026-10-27T00:58:15.809Z
 ---
 
 업무 봇 = 2026-10-20 '봇 허브'에서 개명. 저장소 GitHub hjmoon29/jira, 각 PC `~/Downloads/bot-hub`, 실행 `업무봇 실행.bat/.command`, 동기화 봇으로 Mac·Windows 공유.
@@ -28,3 +28,20 @@ metadata:
 - 창 없이 실행: `업무봇 실행(창없음).vbs`(cmd 숨김, 출력 runs/hub.log) / `업무봇 종료.bat`(8765 리슨 프로세스 종료). bat 안 한글은 cmd 파싱 깨짐 → ASCII만
 - Windows에선 SO_REUSEADDR 때문에 같은 포트에 서버 중복 실행 가능 → 종료 bat이 전부 정리
 - 여전히 git 미커밋·미푸시
+
+## 2026-10-27: 팀원 배포 (각자 설치 방식)
+- 사용자 선택: 공개 URL 대신 '각자 설치용 배포' (봇이 본인 토큰으로 Jira·위키·메일·IMS 쓰기 하므로 공유 URL은 위험)
+- 배포 zip: `~/Downloads/업무봇_팀배포.zip` (runs·.git·백업·토큰·summaries.json·export 제외). 저장소 루트에 `처음 설치.bat`(ASCII, pip playwright openpyxl + setup.py)·`팀원 설치 안내.md` 추가
+- 토큰 리포트 봇: `bots/daily-summary/claude_daily.py` 사본 동봉(데일리 써머리 폴더 없으면 사용, 개인 artifact 링크 제거) → 팀원 PC에서 자기 기록으로 동작
+- 동기화 봇: '저장소 연결'(connect) 추가 — zip 설치본에 git init+fetch+reset(mixed). 저장소 hjmoon29/jira는 private → 팀원 GitHub 초대 필요. 원격이 로컬보다 뒤처짐(ims 등 미푸시) → 푸시해야 팀원 동기화 정상
+
+- 2026-10-27 명칭 변경: **IoT업무봇(Beta)** (화면 제목·로고·브레드크럼), 문장 속은 'IoT업무봇'. 실행 파일 `IoT업무봇 실행.bat/.command`, `IoT업무봇 실행(창없음).vbs`, `IoT업무봇 종료.bat`
+- 설치 zip 최소화: `~/Downloads/IoT업무봇(Beta)_설치.zip` (39파일, 풀면 `IoT업무봇` 폴더). README·.git*·skills·make_botjson.py 제외. 동기화 '저장소 연결' 시 빠진 추적 파일은 git checkout으로 복원(.gitignore 없으면 runs/ 가 올라갈 위험). 생성 스크립트는 세션 scratchpad make_dist.py(화이트리스트 방식)
+
+## 2026-10-27: 부팅 시 자동 실행
+- 시작프로그램 폴더(shell:startup)에 `IoT업무봇.lnk` → wscript.exe "…\bot-hub\IoT업무봇 실행(창없음).vbs". hub.py가 브라우저 자동으로 엶. 해제는 lnk 삭제
+
+## 2026-10-27: 팀 공유 URL = 소개·설치 포털 (claude.ai Artifact)
+- 사용자 선택: 봇 자체를 공유 서버로 여는 대신 '소개·설치 포털 URL' → https://claude.ai/artifact/QCbZVKMQTKXoBFxxHUx84g (비공개, 팀원에게 Share 필요)
+- zip은 Artifact 부속 파일로 못 올림 → base64 텍스트(iot-workbot-beta.b64.txt)로 올리고 페이지가 downloads 캡ability로 zip 복원 저장
+- 소스: 해당 세션 scratchpad iot-workbot-portal.html. zip 갱신 시 같은 URL에 b64 다시 올려야 함
