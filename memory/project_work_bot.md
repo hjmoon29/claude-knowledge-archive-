@@ -45,3 +45,8 @@ metadata:
 - 사용자 선택: 봇 자체를 공유 서버로 여는 대신 '소개·설치 포털 URL' → https://claude.ai/artifact/QCbZVKMQTKXoBFxxHUx84g (비공개, 팀원에게 Share 필요)
 - zip은 Artifact 부속 파일로 못 올림 → base64 텍스트(iot-workbot-beta.b64.txt)로 올리고 페이지가 downloads 캡ability로 zip 복원 저장
 - 소스: 해당 세션 scratchpad iot-workbot-portal.html. zip 갱신 시 같은 URL에 b64 다시 올려야 함
+
+## 2026-10-28: Jira '새 제품 하위 문서' 탭 (첫 탭)
+- 제품명 + 국내향/해외향 라디오 → 향지별 기본 문서 체크 목록(전부 체크) → '값 설정' 창(기준 에픽 config `reference_epic`=IOCARERENEW2023-2597 의 같은 문서에서 담당자·구성요소·레이블·우선순위, 기한 직접) → 생성하기(미리보기+확인 후 생성)
+- config default_docs에 `regions`, 해외향 전용 4종(통합회원 향지·언어 변경·개인정보/약관·포토모드 법무) + 공통 2종(제품 기본 정보·화면 기획) 추가. '기본 하위 문서' 탭은 숨김
+- 코드: jira_tasks.py doc_values/plan_new, adapter new/doc_options/doc_values, index.html openValues(dialog#dlg). 백업 *.bak_20261028. 미커밋

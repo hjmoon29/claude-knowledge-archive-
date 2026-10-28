@@ -100,3 +100,10 @@ https://claude.ai/code/routines 에서 아래 3개 routine 완전 삭제:
 - 로컬 로그: `C:\Users\20020911\scripts\logs\weekly_*_YYYYMMDD_HHmm.log`
 - 로컬 MCP 설정: `C:\Users\20020911\.claude\mcp.json`
 - 원격 관리 웹: https://claude.ai/code/routines
+
+## 2026-10-28 Claude Code 세팅 이사 키트 (진행 예정)
+사용자 승인: export-claude.ps1(현 PC→zip을 `G:\내 드라이브\claude-migration\`) + restore-claude.ps1(새 PC에서 실행) 2종 제작.
+- 포함: settings*.json, mcp.json, memory, skills/plugins/cw-claude, mcp-servers(복원 시 npm install), .claude\*.ps1, C:\Users\20020911\scripts\, Task Scheduler 5개 XML, winget 설치목록(Node·Python3.12+패키지·Git·Google Drive)
+- 제외: .credentials.json(Claude는 재로그인). 사용자명 경로·G: 문자 다를 시 자동 치환. zip은 개인 Drive만(토큰 포함)
+- restore는 zip이 G:든 다운로드 폴더든 같은 폴더에서 찾도록
+- **실행 시점: 2026-10-28 13:00 토큰 리셋 후** 제작+테스트 내보내기. 교체 직전 export 재실행 안내 필요.
