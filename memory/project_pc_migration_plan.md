@@ -106,4 +106,4 @@ https://claude.ai/code/routines 에서 아래 3개 routine 완전 삭제:
 - 포함: settings*.json, mcp.json, memory, skills/plugins/cw-claude, mcp-servers(복원 시 npm install), .claude\*.ps1, C:\Users\20020911\scripts\, Task Scheduler 5개 XML, winget 설치목록(Node·Python3.12+패키지·Git·Google Drive)
 - 제외: .credentials.json(Claude는 재로그인). 사용자명 경로·G: 문자 다를 시 자동 치환. zip은 개인 Drive만(토큰 포함)
 - restore는 zip이 G:든 다운로드 폴더든 같은 폴더에서 찾도록
-- **실행 시점: 2026-10-28 13:00 토큰 리셋 후** 제작+테스트 내보내기. 교체 직전 export 재실행 안내 필요.
+- 2026-10-28 제작 완료: C:\Users\20020911\scripts\migration\ (export-claude.ps1, restore-claude.ps1, README.txt, UTF-8 BOM). 자동모드 분류기가 export 실행을 거부해 사용자가 `!`로 직접 실행. 교체 직전 export 재실행 안내 필요.

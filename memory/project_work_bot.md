@@ -50,3 +50,21 @@ metadata:
 - 제품명 + 국내향/해외향 라디오 → 향지별 기본 문서 체크 목록(전부 체크) → '값 설정' 창(기준 에픽 config `reference_epic`=IOCARERENEW2023-2597 의 같은 문서에서 담당자·구성요소·레이블·우선순위, 기한 직접) → 생성하기(미리보기+확인 후 생성)
 - config default_docs에 `regions`, 해외향 전용 4종(통합회원 향지·언어 변경·개인정보/약관·포토모드 법무) + 공통 2종(제품 기본 정보·화면 기획) 추가. '기본 하위 문서' 탭은 숨김
 - 코드: jira_tasks.py doc_values/plan_new, adapter new/doc_options/doc_values, index.html openValues(dialog#dlg). 백업 *.bak_20261028. 미커밋
+
+## 2026-10-28: Jira '새 프로젝트 문서' 탭 (맨 앞)
+- 제품명만 입력 → 에픽(큰틀) 생성: 제목 `[프로젝트][제품] {제품} 개발을 위한 IoT 기획`, 우선순위 블로커, 구성요소 기획, 레이블 없음, 담당·보고자=나, Epic Name=제목. 설명 틀 = 2597의 대상 제품·주요 결정 사항·전체 일정·기획 문서 표(빈칸). config `epic_template` 에서 수정
+- JQL은 '큰틀'(번역명)을 못 읽음 → 기준 에픽 issuetype id(10000)로 검색·생성. 같은 제목 큰틀 있으면 '이미 있음'
+- 생성 후 config products 에 제품→에픽 자동 등록 → '새 제품 하위 문서' 탭에서 바로 사용
+- 코드: jira_tasks.py plan_epic/register_product, apply kind=epic, adapter new_epic, index.html 확인창. 백업 *.bak_20261028_epic. 실제 생성 시험은 안 함
+- 2026-10-28: 우선순위 '블로커'를 이름으로 지정하면 Jira 오류 → `DEFAULT_PRIORITY="블로커"` 는 보내지 않고 Jira 기본값(=블로커)에 맡김 (에픽·하위문서 모두). 다른 우선순위는 그대로 전송
+- 2026-10-28: 이름 변경 'JIRA 자동 생성기', QA 부제 'QA 이슈 대응 및 문의사항 답변', 봇 아이콘 이모지→선형 SVG(index.html ICON_PATHS, bot id 기준). Figma UX 봇(3번째) 기능은 사용자와 논의 중(미정)
+- 2026-10-28: find_epic 에 '제목에 제품명이 있는 에픽(issuetype id)' 검색 단계 추가 — 하위 문서 없는 에픽(예: 좌욕 스파 비데 2492)도 찾음. 띄어쓰기 다르면 Jira 검색 특성상 못 찾음
+- 2026-10-28: 담당자 기본값 = 나(토큰 주인) — 값 설정 창·직접 입력·기본/별도 문서 모두. 기준 에픽·제품 등록 담당자는 더 이상 기본값으로 안 씀
+- 2026-10-28: 좌욕 스파 비데 3023~3028 담당자→나, 레이블 정수기→비데 (Jira 직접 수정). 레이블 기본값 = 설정(IoCare+) + 제품명 속 제품군(CATEGORIES, product_labels) — 기준 에픽 레이블 복사 중단. 제품 등록에 labels 있으면 그것 우선
+
+## 2026-10-29: Figma UX 기획봇 `bots/figma-ux` (3번째, order 13)
+- 사용자 결정: 그릴 곳 = **원본 파일(첫 참고 주소의 파일)의 '작업안(UX봇)' 페이지**, 미리보기 후 그리기
+- plan: spec_doc.figma_source로 참고 화면 글자 수집 → `claude -p`(도구 없음)가 설계안 JSON(screens: base node-id·layout·changes·states·policy) → runs/figma-ux/ux-*.json(+sources.txt). check_bases가 자료에 없는 node-id 제거
+- revise: 수정 요청 → 새 버전(versions[]). draw: 헤드리스 `claude -p --tools ReadMcpResourceTool --allowedTools mcp__figma__*`(figma-use 스킬 리소스 읽고 use_figma) → 섹션 '[UX봇] 제목 vN · 날짜', 다른 페이지 수정 금지(clone만)
+- 헤드리스에서 Figma MCP(use_figma 포함) 사용 가능 확인. 계정: COWAY 조직 View 시트 / DX/IT서비스센터 Pro Full 시트 → 원본 쓰기 권한은 첫 draw 때 확인 필요(미검증)
+- 설계안 테스트: 매트리스 투데이(dSRZfxlfwHhwPFPtg0Ei7y 17002:60) 4화면, 71초·$0.15. index.html view ux_plan/ux_list. 미커밋

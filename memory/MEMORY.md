@@ -26,7 +26,7 @@
 - [지식 백업 전략 3중 조합 선호](feedback_backup_strategy.md) — 로컬Git+Drive+GitHub 조합, 토큰 자동 sanitize 필수 원칙
 - [부부젤라 (Vuvuzela) 웹앱](project_daily_focus_app.md) — 부부 전용 D-Day·할일·기념일·가계부·기분 통합 PWA, GNB 5탭, 라이트 테마, GitHub Pages 배포 (hjmoon29/vuvuzela, 2026-09-18 리네임)
 - [쇠질모드 (Exercise) 웹앱](project_swijil_mode_app.md) — 운동용 미니멀 시계+스톱워치 PWA, 블랙&화이트, 세로/가로 별도 레이아웃, Wake Lock, hjmoon29/exercise
-- [PC 교체 대비 스케줄 이관 계획](project_pc_migration_plan.md) — 스케줄 로컬 이관 완료(09-21). 10-28 이사 키트(export/restore 스크립트) 13시 이후 제작 예정
+- [PC 교체 대비 스케줄 이관 계획](project_pc_migration_plan.md) — 스케줄 로컬 이관 완료(09-21). 10-28 이사 키트 제작(scripts\migration, export는 직접 실행)
 - [Python 3.12 로컬 설치](project_python_install.md) — Python 3.12.10 + openpyxl/pandas/requests/Pillow/xlsxwriter 설치 완료. xlsx·API·데이터 분석에 활용 가능 (2026-09-17)
 - [코웨이 Claude Code 구독 전환 완료](project_claude_code_subscription.md) — AWS Bedrock PoC 조기 종료 → Anthropic 정액 구독 전환 완료, 담당 IT서비스개발팀 유주연 (2026-10-01)
 - [네이버웍스 알림 발송 준비](project_naverworks_notify.md) — Bot API 2.0 JWT 모듈·설정템플릿·가이드 작성 완료, 자격증명 발급 대기 (2026-10-02)
@@ -44,6 +44,7 @@
 - [중국 ODM 판단 기준](feedback_china_odm_source.md) — KING CARE는 중국 매트리스 기획서(Figma 99_중국 ODM)만 기준, 국내 기획서 비교 금지
 - [숫자 전체 표기 선호](feedback_full_numbers.md) — 토큰 수치는 약어(12.1M) 대신 전체 값(12,147,244)으로
 - [시트 병합 셀 확인](feedback_sheet_merged_cells.md) — 소모품 정의서 빈칸은 병합일 수 있음, include_grid_data로 merges 확인
-- [IoT업무봇(Beta) (bot-hub)](project_work_bot.md) — 10/27 개명·팀 배포 zip·설치 포털 URL(artifact QCbZVKMQ), 구 봇 허브, Jira 하위문서·기획 사양 정리(wiki)·QA 대응(엑셀 메일·예약)·토큰 리포트·IoT IMS 조회(10/22), 코웨이 디자인 통합·창없는 실행(10/23), 미푸시
+- [IoT업무봇(Beta) (bot-hub)](project_work_bot.md) — 10/29 Figma UX 기획봇 추가(3번째, 미검증 draw), 10/27 개명·팀 배포 zip·설치 포털 URL(artifact QCbZVKMQ), 구 봇 허브, Jira 하위문서·기획 사양 정리(wiki)·QA 대응(엑셀 메일·예약)·토큰 리포트·IoT IMS 조회(10/22), 코웨이 디자인 통합·창없는 실행(10/23), 미푸시
 - [업무 봇 화면 주 사용](feedback_work_bot_primary.md) — 반복 업무는 대화창보다 업무 봇 화면에서, 대화창은 봇 수정·봇에 없는 일 (2026-10-26)
-- [Edge Claude 확장 연결](project_edge_claude_extension.md) — 크롬 확장 회사 차단→Edge 설치, Native host 등록·Edge 연결 성공 (2026-10-26)
+- [Edge Claude 확장 연결](project_edge_claude_extension.md) — 크롬 차단→Edge 연결 성공, 네이버웍스 메신저 대화 읽기 실사용(말련향 사양정리 docx, 로그인 필요) (2026-10-28)
+- [일일 업무메모 참고](feedback_daily_work_memo.md) — ~/Downloads/yymmdd_업무내용.txt(CP949)도 업무 답변 소스, 상단 계정·비번·카드정보는 절대 인용 금지 (2026-10-28)
