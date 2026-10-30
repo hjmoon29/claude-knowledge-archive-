@@ -68,3 +68,11 @@ metadata:
 - revise: 수정 요청 → 새 버전(versions[]). draw: 헤드리스 `claude -p --tools ReadMcpResourceTool --allowedTools mcp__figma__*`(figma-use 스킬 리소스 읽고 use_figma) → 섹션 '[UX봇] 제목 vN · 날짜', 다른 페이지 수정 금지(clone만)
 - 헤드리스에서 Figma MCP(use_figma 포함) 사용 가능 확인. 계정: COWAY 조직 View 시트 / DX/IT서비스센터 Pro Full 시트 → 원본 쓰기 권한은 첫 draw 때 확인 필요(미검증)
 - 설계안 테스트: 매트리스 투데이(dSRZfxlfwHhwPFPtg0Ei7y 17002:60) 4화면, 71초·$0.15. index.html view ux_plan/ux_list. 미커밋
+
+## 2026-10-29: '내 할 일' 봇 `bots/my-tasks` (그룹 '내 업무', order 5, 맨 위)
+- 1차 범위(사용자 확정): 메일(Gmail gmail.json, 보낸 메일 포함)·Jira(담당/보고/watcher/댓글 멘션)·위키(멘션+내 이름 CQL)·Drive 폴더(config drive_folder=01. IoT 기획 1cSMs35NALynrvac6jxmArWS_pPRgUwz-)·업무메모. 메신저는 2차 이후
+- 증분: runs/my-tasks/state.json 소스별 last 시각, Drive는 drive_seen(파일별 modifiedTime)+cache/ 사본 → 처음 읽는 문서는 내 이름 줄만, 재수정은 바뀐 줄(+)만. 공유드라이브 폴더 맵 folders.json(7일 캐시, 6273폴더 26초)
+- 할 일 누적 runs/my-tasks/tasks.json (new/update/done을 Claude가 판단, 화면에서 완료·내 일 아님·되돌리기)
+- 업무메모 memo_clean: '<…비번…>' 등 구역·비밀값 줄 제거(검증: 비번 구역 0줄 유출)
+- 아침 메일: 작업 스케줄러 `WorkBotMyTasks` 매일 08:10 (StartWhenAvailable) → morning.py, 로그 runs/my-tasks/morning.log. 설정 탭에서 시각·받는 사람·켜기/끄기
+- 첫 실행(10/29): 7일치 217건 → 할 일 19건, 277초 · $2.11, 메일 발송 확인. 미커밋
