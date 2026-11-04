@@ -44,7 +44,8 @@
 - [중국 ODM 판단 기준](feedback_china_odm_source.md) — KING CARE는 중국 매트리스 기획서(Figma 99_중국 ODM)만 기준, 국내 기획서 비교 금지
 - [숫자 전체 표기 선호](feedback_full_numbers.md) — 토큰 수치는 약어(12.1M) 대신 전체 값(12,147,244)으로
 - [시트 병합 셀 확인](feedback_sheet_merged_cells.md) — 소모품 정의서 빈칸은 병합일 수 있음, include_grid_data로 merges 확인
-- [IoT업무봇(Beta) (bot-hub)](project_work_bot.md) — 10/29 내 할 일 봇(08:10 메일)·Figma UX 기획봇 추가(3번째, 미검증 draw), 10/27 개명·팀 배포 zip·설치 포털 URL(artifact QCbZVKMQ), 구 봇 허브, Jira 하위문서·기획 사양 정리(wiki)·QA 대응(엑셀 메일·예약)·토큰 리포트·IoT IMS 조회(10/22), 코웨이 디자인 통합·창없는 실행(10/23), 미푸시
+- [IoT업무봇(Beta) (bot-hub)](project_work_bot.md) — 11/04 내 할 일 아침 결과 워드(docx) 저장으로 변경, 10/29 내 할 일 봇·Figma UX 기획봇 추가(3번째, 미검증 draw), 10/27 개명·팀 배포 zip·설치 포털 URL(artifact QCbZVKMQ), 구 봇 허브, Jira 하위문서·기획 사양 정리(wiki)·QA 대응(엑셀 메일·예약)·토큰 리포트·IoT IMS 조회(10/22), 코웨이 디자인 통합·창없는 실행(10/23), 미푸시
 - [업무 봇 화면 주 사용](feedback_work_bot_primary.md) — 반복 업무는 대화창보다 업무 봇 화면에서, 대화창은 봇 수정·봇에 없는 일 (2026-10-26)
 - [Edge Claude 확장 연결](project_edge_claude_extension.md) — 크롬 차단→Edge 연결 성공, 네이버웍스 메신저 대화 읽기 실사용(말련향 사양정리 docx, 로그인 필요) (2026-10-28)
+- [예약 작업 창 숨김](project_scheduled_tasks_hidden.md) — Claude* 작업 8개 run_hidden.vbs(wscript)로 실행, 백업 scripts\task_backup_20261104 (2026-11-04)
 - [일일 업무메모 참고](feedback_daily_work_memo.md) — ~/Downloads/yymmdd_업무내용.txt(CP949)도 업무 답변 소스, 상단 계정·비번·카드정보는 절대 인용 금지 (2026-10-28)

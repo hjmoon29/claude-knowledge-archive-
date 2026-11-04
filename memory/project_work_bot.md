@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 2901365a-934a-4b84-9da5-7527e2f9182c
-  modified: 2026-10-27T00:58:15.809Z
+  modified: 2026-11-04T02:25:22.514Z
 ---
 
 업무 봇 = 2026-10-20 '봇 허브'에서 개명. 저장소 GitHub hjmoon29/jira, 각 PC `~/Downloads/bot-hub`, 실행 `업무봇 실행.bat/.command`, 동기화 봇으로 Mac·Windows 공유.
@@ -76,3 +76,24 @@ metadata:
 - 업무메모 memo_clean: '<…비번…>' 등 구역·비밀값 줄 제거(검증: 비번 구역 0줄 유출)
 - 아침 메일: 작업 스케줄러 `WorkBotMyTasks` 매일 08:10 (StartWhenAvailable) → morning.py, 로그 runs/my-tasks/morning.log. 설정 탭에서 시각·받는 사람·켜기/끄기
 - 첫 실행(10/29): 7일치 217건 → 할 일 19건, 277초 · $2.11, 메일 발송 확인. 미커밋
+
+## 2026-11-04: GitHub 푸시 완료
+- 커밋 22914ab (main, hjmoon29/jira) — 그동안 미커밋이던 my-tasks·product-status·ims·figma-ux·jira 탭·코웨이 테마·메뉴 접기·실행파일 개명 등 50파일. runs/·*.bak* 는 .gitignore로 제외(제품별 진행상황 데이터 runs/product-status 는 로컬 전용)
+
+## 2026-11-04: 왼쪽 메뉴 접기
+- 왼쪽 메뉴 오른쪽 경계선 세로 가운데의 ‹/› 탭 버튼(#navtoggle, position fixed — 상단 ☰는 사용자가 비직관적이라 해서 폐기) 또는 Ctrl+B → .app.mini(64px 아이콘 메뉴, 본문 max-width 해제), localStorage hub.navMini 기억, 760px 이하에선 메뉴 완전 숨김
+
+## 2026-11-04: '제품별 진행상황' 봇 `bots/product-status` (그룹 '내 업무', order 6)
+- 제품(행) × 15단계(열: 킥오프·DPP·상품화 착수서 / IoT서비스 기능정의·IoT 기능정의서·세부 정의서·기획 사양 전달·Figma / 서버·앱·IMS / ITG·QA / 양산인정·출시) — 단계·키워드는 config.json
+- 데이터 runs/product-status/products.json, 칸 클릭 → 상태(미착수/예정/진행중/완료/보류/해당없음)·날짜·메모·링크 직접 입력. 제품 추가·수정·삭제·순서·종료 표시
+- Jira: 내 담당 진행 중 큰틀 에픽 → 제품 불러오기(5개 등록됨), 하위 문서('Epic Link' OR parent) 제목 키워드로 빈칸만 채움(src=Jira, 직접 입력 칸은 안 덮음)
+- index.html renderPs·#psdlg, 백업 index.html.bak_20261104_ps. 미커밋
+- 사용자 담당 확정(11/04): 해외향 정수기 [말련향] 아이콘 프로(CHP-7212N_V2)·[말련향] 엘리트 빌트인·[태국향] 아이콘 프로(최린아님 공동) + 좌욕 스파 비데. 매트리스·더매너·원가절감 비데·중국 ODM은 제외(excluded_epics로 Jira 재불러오기 차단). 말련·태국 Jira 에픽 없음
+- 11/04 단계 재구성(35열): 착수3 / IoT기획20(서비스 기능정의·모델별 기본정보·POP·기능정의서·알림·스마트진단·소모품·루틴·문제해결·앱 가이드·Figma·다국어·법무 + 맨 끝 '사양 전달 · 부서' 7개: 상품기획·제품개발/전장·플랫폼·서비스·앱/FE·디자인퍼블리싱·CS) / 개발6(제품 F/W·플랫폼/IMS·서비스 서버·앱 네이티브·FE·디자인퍼블리싱, 부서는 help) / 검증4 / 출시2. 근거: 최근 69개 제품 에픽 하위 문서 팀별 분석. 말련 2종 = 에픽 2810 공유 → jira_fill이 제품명 토큰으로 문서 구분. 이전 데이터 백업 products.json.bak_before_split
+- 출처: 위키 전체 일정 111055323, 주간보고 Doc(LIVING '[말련향] 정수기 2종'·'[태국향] 정수기' 섹션), 모델별 기본 정보 v3.16 '2.0_모델 기본 정보 및 정책' 시트
+
+## 2026-11-04: 내 할 일 → 워드 문서 저장 (메일 가시성 불만)
+- 아침 08:10 실행 결과를 `~/Downloads/[IoT업무봇] 내 할 일_yymmdd.docx` 로 저장 (같은 날 덮어씀, 워드로 열려 있으면 _HHMM 붙임). 메일은 설정 `mail_on`(기본 꺼짐) 켜면 워드 첨부 + 요약 본문
+- 서식 = '[기획 사양 정리] 말련향 정수기 2종' 9장 업무 가이드 복제 (원본 docx-js make_doc.js → python-docx `bots/my-tasks/docx_report.py`): H1 파란 글자+밑줄선, 근거 구분 배지(요청/Jira/약속/메모/추정/중요), ▍기한 묶음별 5열 표, 최근 완료 7일 2열 표, 푸터 Coway Confidential · 쪽
+- 설정 탭 '지금 목록 워드로 저장'(save_now, 저장 후 파일 열기). index.html init이 체크박스 저장값도 반영하도록 수정. 백업 *.bak_20261104. 미커밋
+- 2026-11-04 (2차): 상태 open/done/notmine/**hold(보류)**/deleted. 보류→할 일 되돌리기는 기한 필수(+중요도 선택), 삭제는 confirm. board(): 기한 지남(overdue_days, 빨간 박스/워드 빨간 소제목) → 기한 묶음(묶음 안 중요도→기한 순) → 보류 → 완료 날짜별(done_days, 30일; 워드는 7일) → 내 일 아님. 중요도 열(높음/보통/낮음)은 Claude가 프롬프트 기준으로 판단·재평가(update changes.priority), 보류 항목도 프롬프트에 status로 넘겨 중복 생성 방지. 화면 '워드로 저장·열기' 버튼. 백업 *.bak_20261104b
