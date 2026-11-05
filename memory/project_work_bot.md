@@ -97,3 +97,25 @@ metadata:
 - 서식 = '[기획 사양 정리] 말련향 정수기 2종' 9장 업무 가이드 복제 (원본 docx-js make_doc.js → python-docx `bots/my-tasks/docx_report.py`): H1 파란 글자+밑줄선, 근거 구분 배지(요청/Jira/약속/메모/추정/중요), ▍기한 묶음별 5열 표, 최근 완료 7일 2열 표, 푸터 Coway Confidential · 쪽
 - 설정 탭 '지금 목록 워드로 저장'(save_now, 저장 후 파일 열기). index.html init이 체크박스 저장값도 반영하도록 수정. 백업 *.bak_20261104. 미커밋
 - 2026-11-04 (2차): 상태 open/done/notmine/**hold(보류)**/deleted. 보류→할 일 되돌리기는 기한 필수(+중요도 선택), 삭제는 confirm. board(): 기한 지남(overdue_days, 빨간 박스/워드 빨간 소제목) → 기한 묶음(묶음 안 중요도→기한 순) → 보류 → 완료 날짜별(done_days, 30일; 워드는 7일) → 내 일 아님. 중요도 열(높음/보통/낮음)은 Claude가 프롬프트 기준으로 판단·재평가(update changes.priority), 보류 항목도 프롬프트에 status로 넘겨 중복 생성 방지. 화면 '워드로 저장·열기' 버튼. 백업 *.bak_20261104b
+
+## 2026-11-04: 회의록 작성봇 `bots/minutes` (그룹 '내 업무', order 6)
+- 사용자 선택: 음성 인식은 **PC 안에서**(faster-whisper large-v3-turbo int8, CPU 4스레드, beam 5, ko, VAD) — 음성은 외부 전송 안 함, Claude엔 녹취록 글자만. 모델 캐시 ~/.cache/huggingface (1.6GB). **PyAV는 <16 고정**(av 19는 faster-whisper 1.2.1의 metadata_errors 인자 제거로 오류)
+- 속도(i5-10210U): 실제 길이의 약 1.2배 → 1시간 회의 ≈ 1시간. beam 1도 10%만 빨라 기본 5 유지. 화자 구분 없음(Claude가 문맥 추정)
+- hub.py에 `/api/upload` 추가(X-File-Name, runs/uploads/, 4GB, 하루 지난 첨부 정리). index.html에 필드 type "file"(XHR 진행률 업로드 → 경로를 파라미터로) — 다른 봇도 재사용 가능
+- 흐름: start → worker.py를 창 없이 낮은 우선순위로 분리 실행(파일 잠금으로 STT 1개씩) → job.json 진행률 → 목록 5초 자동 갱신 → 열기(미리보기 iframe, 버전 선택, 수정 요청 revise, 녹취록) → 위키 게시(제목·상위 페이지 입력, 같은 제목이면 갱신, 마지막 위치 config parent 기억). txt/vtt/srt 녹취록이면 STT 생략. 녹취록 원문 접기 옵션
+- config glossary(말련향 등 용어)로 인식·정리 보정. 시험: TTS 45초 → 인식 80초 + 정리 43초 $0.08, 수정 요청 정상. 위키 게시는 미시험(사용자 첫 게시 때 확인). 시험 작업 m20261104-114200 남아 있음
+- 처음 설치.bat에 python-docx faster-whisper "av>=11,<16" 추가. 백업 hub.py/index.html *.bak_20261104(c). 미커밋
+- 2026-11-04: 회의록 작성봇 아이콘 🎙️ 이모지 → 선형 SVG 마이크(ICON_PATHS "minutes"). 새 봇 추가 시 ICON_PATHS에 bot id(폴더명)로 선형 SVG 꼭 추가. 백업 index.html.bak_20261104_mic
+
+## 2026-11-04: '팀 휴가 캘린더' 봇 `bots/team-leave` (그룹 '내 업무', order 7)
+- 네이버웍스 주소록 팀 화면(config orgunit_url …/orgunit/220000000766134, `span.text strong` = '이름 님[IoT기획팀/팀원(경조휴가)]')에서 상태 파싱(긴 상태 우선, 공백 무시) → 구글 캘린더 'IoT기획팀'에 오늘 종일 일정 '{name} {status}' (eventedit URL + 캘린더 선택 드롭다운 UI)
+- 중복 방지: runs/team-leave/state.json (날짜·이름·상태) + 등록 전 일 보기에서 이름+상태 든 일정 있으면 건너뜀(사용자 요청)
+- 프로필 ~/.playwright-teamleave-profile 하나에 웍스·구글 로그인(로그인 탭, 10분 대기). 자동: 작업 스케줄러 WorkBotTeamLeave 평일 08:40·10:00·13:30 → auto.py (설정 탭에서 켬, 아직 미등록)
+- 11/04 첫 로그인 창 시간 초과(사용자 미로그인) → 캘린더 선택 UI(_calendar_pick)·일정 감지(day_events) 미검증. 미커밋
+
+## 2026-11-04: GitHub 2차 푸시
+- 커밋 46ebac4 (main) — 회의록 작성봇·팀 휴가 캘린더·동기화 미리보기/비밀값 검사·아이콘. bots/intimacy 는 .gitignore 제외. 원격과 동기화됨
+
+## 2026-11-05: 반응형 넓은 화면
+- index.html 끝 CSS: ≥1280px 본문 최대 1500px + 양식 짧은 입력란 여러 열(auto-fill 280px, textarea·목록·버튼 줄은 전체 폭, :has 사용) / ≥1600px 본문 최대 1840px. 1279px 이하는 이전과 같음. 백업 index.html.bak_20261105_resp
+- 같은 날 사용자 요청: '최근 실행'은 오른쪽 열 X, 모든 화면 맨 아래 유지. 목록은 5건 높이만 보이고 나머지 스크롤(JS fitHist, 창 크기 바뀌면 재계산). 백업 index.html.bak_20261105_hist
