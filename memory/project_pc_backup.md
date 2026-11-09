@@ -25,3 +25,15 @@ metadata:
 **주의 (내가 틀렸던 것):** G: 드라이브(Drive 앱)의 '여유 공간'은 Drive 용량이 아니라 C: 로컬 디스크 여유다. 실제 용량은 Drive API `about?fields=storageQuota` 로 확인 — 회사 Workspace 공용 풀이라 사실상 무제한. 이걸 잘못 안내해 사용자가 MOV 영상·Meet 녹화를 지우고 휴지통까지 비움.
 **Why:** E: 는 PC 내장 디스크(반납 시 소실), C: 여유 3.4GB 라 Drive 앱 복사는 캐시로 실패 위험 → E:에서 API 직접 업로드.
 **How to apply:** 백업 이야기 나오면 업로드 완료 여부(_upload_state.json)부터 확인. 새 PC 복원은 [[project_pc_migration_plan]] 체크리스트.
+
+## 2026-11-05 최종 점검 (교체 직전)
+- Drive PC백업 2개 API 재확인: 크기 E: 원본과 일치 (업무 8,789,222,013 B / 그외 52,223,621 B)
+- bot-hub: Mac 커밋 2개 pull + 반응형 화면 커밋 ca11195 push → origin/main 과 동일
+- claude-archive: 11/05 09:39 수동 sync, GitHub push 성공 (8ac946a)
+- export-claude.ps1 대상에 `Downloads\claude-daily-summary` 추가(예약작업 daily_all_pcs·upload_daily_drive가 사용, summaries.json 포함). 백업 export-claude.ps1.bak_20261105
+- 이후 이사 키트 재생성(claude-backup-20261105-*.zip) — 결과는 G:\내 드라이브\claude-migration 확인
+
+## 2026-11-05 새 노트북 복원 (Samsung 750XHD, 컴퓨터명·설치일은 회사 이미지라 구 PC와 동일 → .claude 생성일로 판별)
+- restore-claude.ps1 13:47~13:50 실행 완료(로그 ~/.claude/restore-log-202611051350.txt), 예약작업 8개 등록, MCP 6개 연결 + iocare-datalake 재인증 완료
+- git user.name/email 설정 + GitHub GCM 로그인 완료(bot-hub·claude-archive push dry-run OK). `!` 명령은 bash라 경로는 /c/... 형식으로 안내
+- 남은 것: coway-iot-sdk-docs /mcp 인증, 업무봇 시작프로그램 lnk(자동모드 분류기 거부→사용자 수동), Edge Claude 확장 재설치

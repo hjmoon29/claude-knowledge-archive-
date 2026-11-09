@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 2901365a-934a-4b84-9da5-7527e2f9182c
-  modified: 2026-11-04T02:25:22.514Z
+  modified: 2026-11-05T06:25:30.718Z
 ---
 
 업무 봇 = 2026-10-20 '봇 허브'에서 개명. 저장소 GitHub hjmoon29/jira, 각 PC `~/Downloads/bot-hub`, 실행 `업무봇 실행.bat/.command`, 동기화 봇으로 Mac·Windows 공유.
@@ -37,6 +37,10 @@ metadata:
 
 - 2026-10-27 명칭 변경: **IoT업무봇(Beta)** (화면 제목·로고·브레드크럼), 문장 속은 'IoT업무봇'. 실행 파일 `IoT업무봇 실행.bat/.command`, `IoT업무봇 실행(창없음).vbs`, `IoT업무봇 종료.bat`
 - 설치 zip 최소화: `~/Downloads/IoT업무봇(Beta)_설치.zip` (39파일, 풀면 `IoT업무봇` 폴더). README·.git*·skills·make_botjson.py 제외. 동기화 '저장소 연결' 시 빠진 추적 파일은 git checkout으로 복원(.gitignore 없으면 runs/ 가 올라갈 위험). 생성 스크립트는 세션 scratchpad make_dist.py(화이트리스트 방식)
+
+## 2026-11-05: 매일 08:10 자동 실행 (작업 스케줄러)
+- 작업 `IoTWorkBot_0810` (매일 08:10, StartWhenAvailable) → wscript run_hidden.vbs → `scripts\start_workbot.ps1`: 8765가 이미 리슨 중이면 브라우저만 열고, 아니면 창없음 vbs 실행(중복 서버 방지). 시험 실행 결과 0·리슨 확인
+- 이 시점 시작프로그램 `IoT업무봇.lnk` 는 없음(삭제됨)
 
 ## 2026-10-27: 부팅 시 자동 실행
 - 시작프로그램 폴더(shell:startup)에 `IoT업무봇.lnk` → wscript.exe "…\bot-hub\IoT업무봇 실행(창없음).vbs". hub.py가 브라우저 자동으로 엶. 해제는 lnk 삭제
@@ -119,3 +123,33 @@ metadata:
 ## 2026-11-05: 반응형 넓은 화면
 - index.html 끝 CSS: ≥1280px 본문 최대 1500px + 양식 짧은 입력란 여러 열(auto-fill 280px, textarea·목록·버튼 줄은 전체 폭, :has 사용) / ≥1600px 본문 최대 1840px. 1279px 이하는 이전과 같음. 백업 index.html.bak_20261105_resp
 - 같은 날 사용자 요청: '최근 실행'은 오른쪽 열 X, 모든 화면 맨 아래 유지. 목록은 5건 높이만 보이고 나머지 스크롤(JS fitHist, 창 크기 바뀌면 재계산). 백업 index.html.bak_20261105_hist
+
+## 2026-11-09: 팀 휴가 캘린더 '실행 중지'
+- 탭 '실행 중지' + '지금 확인' 탭의 '⏹ 실행 중지' 버튼 → adapter `stop` → team_leave.stop(): 명령줄로 team-leave adapter.py/auto.py 프로세스 찾아 taskkill /T, `schtasks /end WorkBotTeamLeave`, 전용 프로필(.playwright-teamleave-profile) Edge 재스캔해 닫음. 결과는 taskkill 코드 말고 실제로 사라졌는지로 판단(하위 창 먼저 닫히면 코드≠0)
+- 화면 공통: bot.json 액션/extra에 `bypass_busy: true` 면 다른 기능 실행 중에도 실행 가능(전역 busy 안 건드림). hub.py: 강제 종료(출력 없음+코드≠0) 시 '⏹ 실행이 중지되었습니다'
+- 백업 *.bak_20261109, 미커밋
+
+## 2026-11-09: 실행 중 잠금 봇별로 + 마지막 갱신 막대
+- index.html: 전역 busy → 봇별(busyBots, holdBusy(id)가 해제 함수 반환, `busy`는 현재 봇 기준 getter). 다른 봇은 동시 실행 가능, 같은 봇만 막음(같은 저장 파일). 서버는 원래 ThreadingHTTPServer라 동시 처리 OK
+- 원인 사례: 팀 휴가 미리보기가 로그인 대기로 9~11분 돌며 전체 화면을 막았음
+- 내 할 일·제품별 진행상황 첫 탭 상단 `.fresh` 막대(freshBar): 마지막 갱신 시각 크게 + n시간 전, 24시간 넘으면 빨강. 버튼: 내 할 일 '↻ 지금 새로 찾기'(find 기본값으로 실행, 결과는 board 탭) / 제품별 '↻ 지금 새로 가져오기'(jira_fill — 기존 'Jira 하위 문서로 빈칸 채우기' 버튼을 이걸로 옮김)
+- 백업 index.html.bak_20261109b. 새 노트북에서 내 할 일 '매일 아침 자동 실행 꺼짐' 상태 확인됨(11/05 08:10 이후 미실행)
+
+## 2026-11-09: 진행률 게이지 (공통 장치)
+- `bots/hub_progress.py`: progress(pct,msg) / stage(a,b,msg) 하위 구간 / waiting(a,b,msg,fn,est_sec) 끝을 모르는 작업(Claude)은 지난 소요시간 기준 지수로 채움(95%까지). 허브 밖 실행(예약)에선 무동작
+- hub.py: 실행마다 env BOT_HUB_PROGRESS=runs/progress/<bot>__<action>.json, bot.json 액션 `progress:true`면 ACTIVE 등록 → GET `/api/progress?bot=` (새로 고침 뒤 복원용). 끝나면 파일 삭제
+- bot.json `progress: true` + `progress_tab: "board"`(게이지를 보일 탭). 적용: my-tasks find(자료 0~45%·Drive 파일별·Claude 45~92%·state.claude_sec 학습·워드/메일), product-status jira_fill(제품별)
+- index.html: progHTML/paintProg/watchProgress/resumeProgress, runs[k].prog 저장 → 탭/봇 이동·새로 고침 후에도 유지. runAction은 실행 중에도 이전 res 보존, 같은 봇 실행 중이면 auto 탭은 저장 결과(없으면 조용히 board 조회)+게이지
+- 시험: 가짜 봇으로 서버 경로, 브라우저 route 모킹으로 화면(이동·복귀·새로 고침 복원) 확인. 실제 find/jira_fill 실행으로는 미확인
+- 팀 배포 zip 만들 때 bots/hub_progress.py 포함 필요(화이트리스트). 백업 *.bak_20261109c
+
+## 2026-11-09: 제품별 진행상황 '출시' / '운영 배포' 분리 + 해외향 출시 일정 갱신
+- config stages: release(출시, jira ["출시"]) + deploy(운영 배포, jira ["운영 배포","운영배포","앱 오픈","앱오픈"]) 분리. 백업 config.json.bak_20261109_deploy, 데이터 백업 products.json.bak_20261109_release (Drive G:/내 드라이브/IoT업무봇/product-status)
+- 최신 일정 출처는 위키·주간보고가 아니라 상품기획 시트: [말/대/태] 아이콘 프로 프로젝트 개요 1ZqpbniBxFO4VeXqunP8eyBvIYf0aFFftBZHQkJJLjZI, 통합 착수서 1DPL_m7r-178g836ZI7YPaDcZvubWAY1nv95hmJnpZPk('8)개발일정'), 엘리트 빌트인 협업 시트 1hBULMQJfPXRWkzWlxxzhoRxHAKmKgCfICdSz5itVLhw
+- 11/9 기준: 말련 아이콘 프로 출시 28/1/3·양산인정 27/11/16 / 엘리트 빌트인 출시 28/2월中(27/11→28/2)·양산인정 27/12/2 / 태국 아이콘 프로 출시 27/12M(확인 필요)·양산인정 27/10/14. 운영 배포는 세 제품 모두 미정. 위키(111055323)·주간보고는 아직 27/11M·27/6M로 미갱신
+
+## 2026-11-09: 진행률 게이지 6개 봇 추가 적용
+- progress:true — qa(answer·run_now: 이슈 읽기 5~22·참고자료 22~30·Claude 15건 단위 30~90·엑셀), spec-doc draft(collect(prog=)로 위키·Figma·Drive 0~45, Claude 45~97 예상=지난 초안 글자당 시간), figma-ux plan·revise·draw(past_sec 평균, draw는 화면 수 비례), intimacy refresh(소스별 가중치), minutes revise, team-leave run·preview·login(단계 + 로그인 남은 시간 카운트다운)
+- 회의록 백그라운드: worker.py 가 job.pct(음성 인식 0~80, 정리 80~99 지난 평균 기준, 완료 100) 기록, 목록에 progHTML 게이지. tick 스레드는 최종 저장 전에 join
+- 화면: #progzone(결과 카드 위) = 별도 버튼으로 실행한 기능 게이지 모음(startProg(botId, actId, label)), 현재 봇 것만. 일반 실행 버튼 기능은 #st 옆
+- 시험: 각 봇 실제 코드를 외부 호출 스텁으로 실행(BOT_HUB_RUNS 임시) + 화면 route 모킹. 실데이터 실행은 미확인. 백업 *.bak_20261109d

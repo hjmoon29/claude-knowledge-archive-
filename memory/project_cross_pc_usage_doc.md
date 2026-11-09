@@ -53,3 +53,8 @@ originSessionId: 8ce9232a-cdfb-4b01-be53-d8aee2ebf4cb
 - Mac: Drive의 mac_setup.sh를 10:00·16:30 launchd로 수정 — Mac에서 `bash mac_setup.sh` 1회 재실행해야 적용 (이전 17:00 예약을 덮어씀)
 - 업무 봇 기간 리포트(report)는 Drive 폴더·db_cache 중 최신을 읽음
 - 합산 메일 주간 전환 (2026-10-27, 사용자 요청): `send <날짜>` 단일일 모드가 이제 **주간 한도 구간(계정 전체 d7r 기준, 초기화시각-7일 ~ 지금) 모든 PC 합산 토큰**으로 발송. 제목 `[클로드 데일리 써머리] 주간 MM/DD~MM/DD · 한도 N% · 총 N 토큰`. 첫날은 초기화 시각 이후 시간대만(trim_day). Windows는 usage-snapshots.jsonl 대신 `~/.claude/rate-limits-cache.json`을 export_account에 누적. 백업: claude_daily.py.bak_20261027. PC 꺼져 있으면 17:10분이 다음날 아침 실행됨(StartWhenAvailable).
+
+## 2026-11-09: 새 노트북에서 작업폴더 누락 → 복원
+- 새 PC 복원 시 `Downloads\claude-daily-summary`가 빠져 11/05 16:30부터 ClaudeDriveUpload 실패(claude_daily.py 못 찾음). 이사 키트 claude-backup-20261105-0940.zip에서 폴더 복원 → 정상화
+- 구 PC의 짧은 세션 3개(10/29 fdc026b7, 10/30 40ca8bce, 11/02 59244316)는 새 PC에 기록이 없어 재export하면 값이 조금 줄어듦 → 해당 날짜는 DB 값 유지(덮어쓰지 말 것). Drive 사본도 DB 값으로 되돌림
+- 11/05·11/09 usage·account DB 업로드 완료, db_cache 갱신

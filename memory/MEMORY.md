@@ -34,12 +34,12 @@
 - [claude-talk-to-figma-mcp 세팅](project_figma_talk_setup.md) — Figma 직접 쓰기 MCP 세팅 완료(Bun+WebSocket+Companion Plugin), 매트리스 v1.12 작업안 반영 대기 (2026-10-06)
 - [주간보고 Google 문서 & 담당 파트](reference_weekly_report.md) — 팀 주간보고 Docs URL, 담당 파트: LIVING·BEREX (2026-10-06)
 - [Claude 일일 요약 (daily_summary.py)](project_claude_daily_summary.md) — 17:10 KST Gmail 발송, 아카이브(index.html) + 백필 지원 (2026-10-06)
-- [Claude 멀티 PC 사용량 공유 Doc](project_cross_pc_usage_doc.md) — Mac·Win 등 PC별 일일 사용량을 공유 Claude Doc에 모아 교차 집계 (2026-10-08, 10/22 Drive 자동 업로드 10:00·16:30)
+- [Claude 멀티 PC 사용량 공유 Doc](project_cross_pc_usage_doc.md) — Mac·Win 등 PC별 일일 사용량을 공유 Claude Doc에 모아 교차 집계 (2026-10-08, 10/22 Drive 자동 업로드 10:00·16:30, 11/09 새PC 작업폴더 복원)
 - [소모품 정보 소스 문서 우선순위](reference_consumable_source_docs.md) — Figma+CW_IoCare_소모품_정의서가 1차, 소모품 콘텐츠 정의서는 참고용(deprecated)
 - [앱 데모 5종 (app-examples)](project_app_examples.md) — 마켓온/하우스/동네생활/머니로그/올인원 공개 웹 데모 (exercise0867.github.io/app-examples, 2026-10-07)
 - [앱 데모 v2 (5종 완전 분화)](project_app_examples_v2.md) — 톤·디자인·기능 전부 다르게 재설계한 로컬 프로토타입 (projects/app-examples-v2, 2026-10-07)
 - [Statusline 공식 rate_limits](reference_statusline_rate_limits.md) — statusline stdin의 5h/주간 공식 사용률·리셋시각, 시작화면은 캐시로 공유 (2026-10-08)
-- [PC 반납 백업](project_pc_backup.md) — 2024이후 zip(E:\Backup)→Drive PC백업 API 업로드, 이사키트 11/04 재생성, G: 여유≠Drive 용량 주의 (2026-11-04)
+- [PC 반납 백업](project_pc_backup.md) — Drive PC백업 zip 2개 검증·bot-hub push·archive push·이사키트 11/05 재생성(claude-daily-summary 포함) 최종 점검 (2026-11-05)
 - [팀원 명단](user_team_members.md) — 최린아·오가현·오종하·김태현·김보라·최유나·원창연님 (같은 팀, 2026-10-08)
 - [중국 ODM 판단 기준](feedback_china_odm_source.md) — KING CARE는 중국 매트리스 기획서(Figma 99_중국 ODM)만 기준, 국내 기획서 비교 금지
 - [숫자 전체 표기 선호](feedback_full_numbers.md) — 토큰 수치는 약어(12.1M) 대신 전체 값(12,147,244)으로
@@ -50,3 +50,5 @@
 - [직원 친밀도 봇](project_intimacy_bot.md) — 업무봇 '기타' 그룹, 직원↔직원 상호작용 순위·나만 보기(gitignore), 메신저 Playwright 로그인 대기 (2026-11-04)
 - [예약 작업 창 숨김](project_scheduled_tasks_hidden.md) — Claude* 작업 8개 run_hidden.vbs(wscript)로 실행, 백업 scripts\task_backup_20261104 (2026-11-04)
 - [일일 업무메모 참고](feedback_daily_work_memo.md) — ~/Downloads/yymmdd_업무내용.txt(CP949)도 업무 답변 소스, 상단 계정·비번·카드정보는 절대 인용 금지 (2026-10-28)
+- [Ziggle 마우스 지글러](project_ziggle.md) — 트레이 On/Off 화면보호기 방지, PowerShell+vbs(exe는 보안 삭제), 바탕화면 ziggle.lnk (2026-11-05)
+- [IoT기능정의서 = CW_IoCare_제품_기능정의서](reference_iot_func_def.md) — 팀 내 호칭, 최신 v2.75_20261106 구글시트 1w15PUJ…, 버전 자주 바뀜 (2026-11-09)
