@@ -3,6 +3,7 @@ name: Claude 멀티 PC 사용량 공유 저장소 Doc
 description: Mac·Windows 등 여러 PC의 Claude Code 일일 사용량을 하나의 Claude Doc에 모아 교차 집계하는 시스템 (2026-10-08)
 type: project
 originSessionId: 8ce9232a-cdfb-4b01-be53-d8aee2ebf4cb
+modified: 2026-11-09T23:02:37.973Z
 ---
 # 설계
 
@@ -58,3 +59,4 @@ originSessionId: 8ce9232a-cdfb-4b01-be53-d8aee2ebf4cb
 - 새 PC 복원 시 `Downloads\claude-daily-summary`가 빠져 11/05 16:30부터 ClaudeDriveUpload 실패(claude_daily.py 못 찾음). 이사 키트 claude-backup-20261105-0940.zip에서 폴더 복원 → 정상화
 - 구 PC의 짧은 세션 3개(10/29 fdc026b7, 10/30 40ca8bce, 11/02 59244316)는 새 PC에 기록이 없어 재export하면 값이 조금 줄어듦 → 해당 날짜는 DB 값 유지(덮어쓰지 말 것). Drive 사본도 DB 값으로 되돌림
 - 11/05·11/09 usage·account DB 업로드 완료, db_cache 갱신
+- 11/10 08:00: 11/09(전일 최종)·11/10 usage·account 업로드, db_cache 갱신 (11/05 이전은 DB 값 유지 원칙대로 미변경)

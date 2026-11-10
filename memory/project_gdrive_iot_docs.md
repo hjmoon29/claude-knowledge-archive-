@@ -62,7 +62,7 @@ originSessionId: 933efe9d-5e81-4e14-8185-19bc598ae487
 
 ## OAuth 토큰
 - 파일: `C:\Users\20020911\.gmail-mcp\gsheets-token.json`
-- 현재 scope: **`drive.readonly + spreadsheets`** (2026-10-02 재인증, 폴더 전수 탐색 가능)
+- 현재 scope: **`drive + spreadsheets`** (2026-11-10 재인증 — 복제·이동·이름변경 가능)
 - 자격증명: `C:\Users\20020911\.gmail-mcp\gcp-oauth.keys.json` (project: jira-gmail-497708)
 - 리스너: `C:\Users\20020911\.gmail-mcp\oauth_listener.ps1` (포트 4389)
 - 재인증 필요 시: 리스너 백그라운드 실행 + `https://accounts.google.com/o/oauth2/v2/auth` URL에 `scope=drive.readonly+spreadsheets`, `access_type=offline`, `prompt=consent` 넘겨 승인

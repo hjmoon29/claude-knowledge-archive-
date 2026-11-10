@@ -52,3 +52,7 @@
 - [일일 업무메모 참고](feedback_daily_work_memo.md) — ~/Downloads/yymmdd_업무내용.txt(CP949)도 업무 답변 소스, 상단 계정·비번·카드정보는 절대 인용 금지 (2026-10-28)
 - [Ziggle 마우스 지글러](project_ziggle.md) — 트레이 On/Off 화면보호기 방지, PowerShell+vbs(exe는 보안 삭제), 바탕화면 ziggle.lnk (2026-11-05)
 - [IoT기능정의서 = CW_IoCare_제품_기능정의서](reference_iot_func_def.md) — 팀 내 호칭, 최신 v2.75_20261106 구글시트 1w15PUJ…, 버전 자주 바뀜 (2026-11-09)
+- [2027 IoCare 1.0 정수기 이관 계획](project_iocare1_wp_migration.md) — 미이관 IOT 9·NFC 46, 웨이브 W1 국내3종→W2 해외4종→W3 NFC→27/12 종료 (2026-11-10 초안)
+- [좌욕스파비데 사용량 리포트(제품제어)](project_spa_bidet_usage_report.md) — 리포트 화면 X·제품제어만, Figma 섹션 22126:702 v4(축약 펼침·논점 패널 11/10), 엑셀 4셀 반영 완료, 개발·기획 답변 대기
+- [말련향 정수기 Jira 2810 정비](project_malaysia_wp_jira.md) — 하위문서 22건 담당 문효준, 알림·루틴·소모품은 대만 아이콘 프로 열 작성 후 복제 (2026-11-10)
+- [정의서 수정 시 백업·버전·이력](feedback_doc_version_backup.md) — 백업 폴더 복제→파일명 버전/일자→문서이력 기재 필수
