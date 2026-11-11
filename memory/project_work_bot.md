@@ -153,3 +153,10 @@ metadata:
 - 회의록 백그라운드: worker.py 가 job.pct(음성 인식 0~80, 정리 80~99 지난 평균 기준, 완료 100) 기록, 목록에 progHTML 게이지. tick 스레드는 최종 저장 전에 join
 - 화면: #progzone(결과 카드 위) = 별도 버튼으로 실행한 기능 게이지 모음(startProg(botId, actId, label)), 현재 봇 것만. 일반 실행 버튼 기능은 #st 옆
 - 시험: 각 봇 실제 코드를 외부 호출 스텁으로 실행(BOT_HUB_RUNS 임시) + 화면 route 모킹. 실데이터 실행은 미확인. 백업 *.bak_20261109d
+
+## 2026-11-11: 공통 '중지' 기능 + 명칭 변경
+- hub.py: 기능 실행을 Popen(새 프로세스 그룹)으로 바꾸고 RUNNING 등록 → POST /api/stop {bot, action?} 이 taskkill /T /F 로 하위(Edge·Claude)까지 종료, runs/<봇>/*.lock 삭제, 결과 {stopped:true, headline '⏹ 실행이 중지되었습니다'}. GET /api/running 추가
+- index.html: stopBtn(s) — 진행률 게이지(progHTML) 오른쪽, 게이지 없는 기능은 1초 뒤 상태줄 옆 '■ 중지'(확인창). runs 항목에 bot·act 저장. 백업 hub.py.bak_20261111_stop, index.html.bak_20261111_stop
+- 시험: intimacy refresh 실행 1.5초 뒤 중지 → 0.5초 만에 종료, run.lock 정리 확인
+- '직원 친밀도' → 화면 명칭 '직원 커뮤니케이션' (폴더 id intimacy 유지)
+- 제품별 진행상황 순서: 좌욕 스파 비데 맨 위 (Drive products.json, 백업 .bak_20261111_order)

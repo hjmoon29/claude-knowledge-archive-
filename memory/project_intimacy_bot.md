@@ -1,6 +1,6 @@
 ﻿---
 name: project-intimacy-bot
-description: "IoT업무봇 '직원 친밀도' 봇(bots/intimacy, 그룹 기타) — 직원↔직원 상호작용 순위, 나만 보기(.gitignore 제외), 메신저 Playwright (2026-11-04)"
+description: "IoT업무봇 '직원 친밀도' 봇(bots/intimacy, 그룹 기타) — 직원↔직원 상호작용 순위, 나만 보기(.gitignore 제외), 메신저 Playwright (2026-11-04)" (2026-11-11 화면 명칭 "직원 커뮤니케이션"으로 변경, 폴더·id는 intimacy 그대로)
 metadata:
   node_type: memory
   type: project

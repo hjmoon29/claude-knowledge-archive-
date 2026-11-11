@@ -60,3 +60,4 @@ modified: 2026-11-09T23:02:37.973Z
 - 구 PC의 짧은 세션 3개(10/29 fdc026b7, 10/30 40ca8bce, 11/02 59244316)는 새 PC에 기록이 없어 재export하면 값이 조금 줄어듦 → 해당 날짜는 DB 값 유지(덮어쓰지 말 것). Drive 사본도 DB 값으로 되돌림
 - 11/05·11/09 usage·account DB 업로드 완료, db_cache 갱신
 - 11/10 08:00: 11/09(전일 최종)·11/10 usage·account 업로드, db_cache 갱신 (11/05 이전은 DB 값 유지 원칙대로 미변경)
+- 11/11 08:00: 11/10(전일 최종)·11/11 usage·account 업로드, db_cache 갱신, 11/10 세션 요약 3건 summaries.json 추가

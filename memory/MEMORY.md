@@ -47,7 +47,7 @@
 - [IoT업무봇(Beta) (bot-hub)](project_work_bot.md) — 11/04 회의록 작성봇(PC 음성인식→위키) 추가, 11/04 내 할 일 아침 결과 워드(docx) 저장으로 변경, 10/29 내 할 일 봇·Figma UX 기획봇 추가(3번째, 미검증 draw), 10/27 개명·팀 배포 zip·설치 포털 URL(artifact QCbZVKMQ), 구 봇 허브, Jira 하위문서·기획 사양 정리(wiki)·QA 대응(엑셀 메일·예약)·토큰 리포트·IoT IMS 조회(10/22), 코웨이 디자인 통합·창없는 실행(10/23), 미푸시
 - [업무 봇 화면 주 사용](feedback_work_bot_primary.md) — 반복 업무는 대화창보다 업무 봇 화면에서, 대화창은 봇 수정·봇에 없는 일 (2026-10-26)
 - [Edge Claude 확장 연결](project_edge_claude_extension.md) — 크롬 차단→Edge 연결 성공, 네이버웍스 메신저 대화 읽기 실사용(말련향 사양정리 docx, 로그인 필요) (2026-10-28)
-- [직원 친밀도 봇](project_intimacy_bot.md) — 업무봇 '기타' 그룹, 직원↔직원 상호작용 순위·나만 보기(gitignore), 메신저 Playwright 로그인 대기 (2026-11-04)
+- [직원 커뮤니케이션 봇(구 친밀도)](project_intimacy_bot.md) — 11/11 명칭 변경, 업무봇 '기타' 그룹, 직원↔직원 상호작용 순위·나만 보기(gitignore), 메신저 Playwright 로그인 대기 (2026-11-04)
 - [예약 작업 창 숨김](project_scheduled_tasks_hidden.md) — Claude* 작업 8개 run_hidden.vbs(wscript)로 실행, 백업 scripts\task_backup_20261104 (2026-11-04)
 - [일일 업무메모 참고](feedback_daily_work_memo.md) — ~/Downloads/yymmdd_업무내용.txt(CP949)도 업무 답변 소스, 상단 계정·비번·카드정보는 절대 인용 금지 (2026-10-28)
 - [Ziggle 마우스 지글러](project_ziggle.md) — 트레이 On/Off 화면보호기 방지, PowerShell+vbs(exe는 보안 삭제), 바탕화면 ziggle.lnk (2026-11-05)
@@ -56,3 +56,9 @@
 - [좌욕스파비데 사용량 리포트(제품제어)](project_spa_bidet_usage_report.md) — 리포트 화면 X·제품제어만, Figma 섹션 22126:702 v4(축약 펼침·논점 패널 11/10), 엑셀 4셀 반영 완료, 개발·기획 답변 대기
 - [말련향 정수기 Jira 2810 정비](project_malaysia_wp_jira.md) — 하위문서 22건 담당 문효준, 알림·루틴·소모품은 대만 아이콘 프로 열 작성 후 복제 (2026-11-10)
 - [정의서 수정 시 백업·버전·이력](feedback_doc_version_backup.md) — 백업 폴더 복제→파일명 버전/일자→문서이력 기재 필수
+- [기능정의서 옵션 줄바꿈 규칙](feedback_func_def_option_format.md) — 옵션값·옵션명은 값마다 줄바꿈(사내 규칙), 신규·미정의 값은 빨간 '미정'
+- [POP코드 = 자재코드 36진수](reference_pop_code_base36.md) — 문서 조회 대신 36진수 5자리 변환으로 계산 (114346→02G8A)
+- [캘린더 월페이퍼 자동 갱신](project_calendar_wallpaper.md) — 예약 IoTWorkBot_Morning 08:12: 메신저·내 할 일·제품별 진행상황 갱신 후 월페이퍼 생성·적용 (2026-11-11)
+- [메신저 사적 대화 제외](feedback_messenger_private.md) — 메신저 요약·표시엔 업무 내용만, 사적 대화는 절대 X (애매하면 제외)
+- [로그인 창은 화면 가운데](feedback_login_window_center.md) — Playwright/Edge 로그인 창은 주 모니터 가운데 1200×860, 측면 X
+- [IMS 호출 주의](feedback_ims_caution.md) — 11/10 IMS 서버 에러 연락으로 중단, 재허락 전 IMS 접근 금지·전수조회 금지
