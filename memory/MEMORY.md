@@ -44,7 +44,7 @@
 - [중국 ODM 판단 기준](feedback_china_odm_source.md) — KING CARE는 중국 매트리스 기획서(Figma 99_중국 ODM)만 기준, 국내 기획서 비교 금지
 - [숫자 전체 표기 선호](feedback_full_numbers.md) — 토큰 수치는 약어(12.1M) 대신 전체 값(12,147,244)으로
 - [시트 병합 셀 확인](feedback_sheet_merged_cells.md) — 소모품 정의서 빈칸은 병합일 수 있음, include_grid_data로 merges 확인
-- [IoT업무봇(Beta) (bot-hub)](project_work_bot.md) — 11/04 회의록 작성봇(PC 음성인식→위키) 추가, 11/04 내 할 일 아침 결과 워드(docx) 저장으로 변경, 10/29 내 할 일 봇·Figma UX 기획봇 추가(3번째, 미검증 draw), 10/27 개명·팀 배포 zip·설치 포털 URL(artifact QCbZVKMQ), 구 봇 허브, Jira 하위문서·기획 사양 정리(wiki)·QA 대응(엑셀 메일·예약)·토큰 리포트·IoT IMS 조회(10/22), 코웨이 디자인 통합·창없는 실행(10/23), 미푸시
+- [IoT업무봇(Beta) (bot-hub)](project_work_bot.md) — 11/12 프로젝트 대응 봇(메일·Jira·할일·파일) 추가, 11/11 앱 연결 QR·URL 등록 봇 추가, 11/04 회의록 작성봇(PC 음성인식→위키) 추가, 11/04 내 할 일 아침 결과 워드(docx) 저장으로 변경, 10/29 내 할 일 봇·Figma UX 기획봇 추가(3번째, 미검증 draw), 10/27 개명·팀 배포 zip·설치 포털 URL(artifact QCbZVKMQ), 구 봇 허브, Jira 하위문서·기획 사양 정리(wiki)·QA 대응(엑셀 메일·예약)·토큰 리포트·IoT IMS 조회(10/22), 코웨이 디자인 통합·창없는 실행(10/23), 미푸시
 - [업무 봇 화면 주 사용](feedback_work_bot_primary.md) — 반복 업무는 대화창보다 업무 봇 화면에서, 대화창은 봇 수정·봇에 없는 일 (2026-10-26)
 - [Edge Claude 확장 연결](project_edge_claude_extension.md) — 크롬 차단→Edge 연결 성공, 네이버웍스 메신저 대화 읽기 실사용(말련향 사양정리 docx, 로그인 필요) (2026-10-28)
 - [직원 커뮤니케이션 봇(구 친밀도)](project_intimacy_bot.md) — 11/11 명칭 변경, 업무봇 '기타' 그룹, 직원↔직원 상호작용 순위·나만 보기(gitignore), 메신저 Playwright 로그인 대기 (2026-11-04)
@@ -53,12 +53,14 @@
 - [Ziggle 마우스 지글러](project_ziggle.md) — 트레이 On/Off 화면보호기 방지, PowerShell+vbs(exe는 보안 삭제), 바탕화면 ziggle.lnk (2026-11-05)
 - [IoT기능정의서 = CW_IoCare_제품_기능정의서](reference_iot_func_def.md) — 팀 내 호칭, 최신 v2.75_20261106 구글시트 1w15PUJ…, 버전 자주 바뀜 (2026-11-09)
 - [2027 IoCare 1.0 정수기 이관 계획](project_iocare1_wp_migration.md) — 미이관 IOT 9·NFC 46, 웨이브 W1 국내3종→W2 해외4종→W3 NFC→27/12 종료 (2026-11-10 초안)
-- [좌욕스파비데 사용량 리포트(제품제어)](project_spa_bidet_usage_report.md) — 리포트 화면 X·제품제어만, Figma 섹션 22126:702 v4(축약 펼침·논점 패널 11/10), 엑셀 4셀 반영 완료, 개발·기획 답변 대기
+- [좌욕스파비데 사용량 리포트(제품제어)](project_spa_bidet_usage_report.md) — 공식 표기 '좌욕스파 비데', 리포트 화면 X·제품제어만, Figma 섹션 22126:702 v4(축약 펼침·논점 패널 11/10), 엑셀 4셀 반영 완료, 개발·기획 답변 대기
 - [말련향 정수기 Jira 2810 정비](project_malaysia_wp_jira.md) — 하위문서 22건 담당 문효준, 알림·루틴·소모품은 대만 아이콘 프로 열 작성 후 복제 (2026-11-10)
 - [정의서 수정 시 백업·버전·이력](feedback_doc_version_backup.md) — 백업 폴더 복제→파일명 버전/일자→문서이력 기재 필수
 - [기능정의서 옵션 줄바꿈 규칙](feedback_func_def_option_format.md) — 옵션값·옵션명은 값마다 줄바꿈(사내 규칙), 신규·미정의 값은 빨간 '미정'
 - [POP코드 = 자재코드 36진수](reference_pop_code_base36.md) — 문서 조회 대신 36진수 5자리 변환으로 계산 (114346→02G8A)
-- [캘린더 월페이퍼 자동 갱신](project_calendar_wallpaper.md) — 예약 IoTWorkBot_Morning 08:12: 메신저·내 할 일·제품별 진행상황 갱신 후 월페이퍼 생성·적용 (2026-11-11)
+- [캘린더 월페이퍼 자동 갱신](project_calendar_wallpaper.md) — 예약 IoTWorkBot_Morning 08:15 + IoTWorkBot_Wallpaper 평일 10·12·14·16시 수시 갱신,: 메신저·내 할 일·제품별 진행상황 갱신 후 월페이퍼 생성·적용 (2026-11-11)
 - [메신저 사적 대화 제외](feedback_messenger_private.md) — 메신저 요약·표시엔 업무 내용만, 사적 대화는 절대 X (애매하면 제외)
 - [로그인 창은 화면 가운데](feedback_login_window_center.md) — Playwright/Edge 로그인 창은 주 모니터 가운데 1200×860, 측면 X
+- [다국어번역 정산 작업](project_translation_settlement.md) — 번역 정산 공식 명칭, NECOA 외 전체 서비스 포함·월말, 업무봇 t38 (2026-11-11)
+- [매뉴얼 앱 다운로드 QR·URL 문서](reference_manual_qr_url_doc.md) — CW_IoCare_IoT서비스 소개페이지 URL정의서 v3.2 (1ljbt1jQ…), 'URL QR코드 리스트' 탭
 - [IMS 호출 주의](feedback_ims_caution.md) — 11/10 IMS 서버 에러 연락으로 중단, 재허락 전 IMS 접근 금지·전수조회 금지

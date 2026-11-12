@@ -160,3 +160,14 @@ metadata:
 - 시험: intimacy refresh 실행 1.5초 뒤 중지 → 0.5초 만에 종료, run.lock 정리 확인
 - '직원 친밀도' → 화면 명칭 '직원 커뮤니케이션' (폴더 id intimacy 유지)
 - 제품별 진행상황 순서: 좌욕 스파 비데 맨 위 (Drive products.json, 백업 .bak_20261111_order)
+- 2026-11-11: '앱 연결 QR·URL 등록' 봇 추가(bots/qr-url, 기획 업무 그룹, order 14) — URL정의서 행 추가·QR 생성 업로드·문서이력(같은 버전 이어쓰기/작성자별 행 분리·병합/새 버전 사본백업+파일명 변경), QR 다시 만들기, 목록 확인. 시트 사본으로 3가지 이력 모드 실측 검증 후 테스트 파일 휴지통. 미푸시(동기화 '변경 올리기' 필요). 쓰기 토큰: ~/.gmail-mcp/gsheets-token.json(이 PC) / 팀원은 credentials.json gdrive_write_token 필요
+- 2026-11-11 왼쪽 메뉴 개선(1~7): 묶음 간격 18px·제목 진하게, 접기 버튼 위쪽(topbar+12px), '기타'→'리포트'에 직원 커뮤니케이션, 팀 휴가 캘린더→사내 예약(order 22), 이름 통일(Jira 자동 생성·기획 사양 정리(위키)·회의록 작성·Figma UX 기획 — README·팀원 설치 안내·SKILL 포함), 배지(hub.py /api/badges: 내 할 일 오늘·지난 기한 수 빨강, 동기화 올릴 변경 주황 점, 60초 갱신). 백업 *.bak_20261111_nav. 서버 재시작함. 미푸시
+## 2026-11-12: '프로젝트 대응' 봇 추가 (bots/projects, 내 업무 맨 위)
+- 프로젝트별 탭 → 지금 상황(Claude 요약)·해야 할 일·메일·Jira 생성/변경·파일 섹션. 처음엔 제품별 진행상황 products.json에서 시드(종료 제외)
+- 메일: 키워드(+지역어 AND) Gmail 검색, 자동리포트·[COWAY-JIRA] 알림 제외(config mail_exclude). 첨부 받기 → ~/Downloads/IoT업무봇/<프로젝트>/ 저장 후 미리보기. 답장 초안(sonnet, 보내지 않음)
+- Jira: 에픽 하위 changelog(생성·상태·담당·기한·댓글). 같은 에픽 공유 프로젝트(말련향 2종)는 제목 키워드로 구분. '처리' = 댓글·상태 전환 즉시 반영
+- 파일: 다운로드 최근 90일 xlsx/pptx/docx/pdf/csv 키워드 매칭 + 직접 연결. 미리보기(xlsx 80행·pptx 글자·docx). .txt·'업무내용' 등 이름은 목록·열기 모두 차단(업무메모 계정정보)
+- 데이터 runs/projects/{projects.json,data/<id>.json}, 증분(mail_at/jira_at). 백업 index.html.bak_20261112_projects. 미커밋, 자동 예약 실행은 아직 없음
+- 11/12 오후: 프로젝트 대응을 **전용 화면**으로 분리 — 상단 바 [🗂️ 프로젝트 대응 | 🧰 업무 도구] 전환(hub.mode, 기본 pj). 프로젝트 모드: 왼쪽=프로젝트 목록(#pjside, 배지), 본문 전체=#pjmain(헤더+한눈에 2열 대시보드: 상황·할일 | 메일·Jira, 아래 파일). 업무 도구 목록에서는 projects 봇 제외(selectBot이 projects면 pj 모드로). 백업 index.html.bak_20261112_pjmode
+- 11/12: 프로젝트 목록 드래그 순서 변경(reorder 액션, 즉시 화면 반영 후 저장) + 제품 종류 아이콘(정수기·비데·공기청정기·매트리스·식기세척기·에어컨·가습기·제습기·기타 SVG). 종류는 이름·모델명 자동 추정(guess_category), ✎ '제품 종류'에서 직접 지정 가능. 백업 index.html.bak_20261112_drag, projects.py.bak_20261112_icon
+- 11/12: 프로젝트 새로 확인에 **메일 첨부 자동 저장**(본문 그림 제외, ~/Downloads/IoT업무봇/<프로젝트>/, 같은 이름·크기면 건너뜀, 다른 내용이면 _yymmdd_HHMM) + **다운로드 폴더 전체 스캔**(하위 4단계, bot-hub·claude-daily-summary·'개인' 폴더 제외, 폴더 이름 키워드도 매칭). **아침 자동 확인** 작업 스케줄러 `WorkBotProjects` 매일 08:20 → bots/projects/morning.py(pythonw), 로그 runs/projects/morning.log, run.lock으로 화면 실행과 겹침 방지. 왼쪽 아래 '⏰ 매일 아침 자동 확인' 버튼에서 켜기/시각 변경. 11/12 10:00 수동 실행 검증 완료. PDF는 화면 미리보기 미지원(열기만)

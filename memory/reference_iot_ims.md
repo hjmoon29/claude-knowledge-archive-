@@ -8,7 +8,8 @@ originSessionId: 9911f3ef-a1ea-4436-9640-20bc02b6135b
 
 ## URL
 - **IoCare IMS (국내향):** https://ims.iot.coway.com/dashboard/siteMap
-- **NECOA IMS (해외향):** ims.iot.coway.com 계열 + 일부 쇼피파이 병행
+- **NECOA IMS (해외향):** 운영 https://ims.iotsvc.necoa.com / 검증 https://ims.iotsvc.necoa.blue / 개발 https://ims.iotsvc.necoa.dev (공지 일부는 Shopify admin 병행) — 위키 248560564·363113320·166731606 기준 (2026-11-11 확인)
+- IoCare IMS 환경: 운영 ims.iot.coway.com / 검증 ims.iot.coway.blue / 개발 ims.iot.coway.dev
 
 ## 주요 기능
 | 영역 | 상세 |
