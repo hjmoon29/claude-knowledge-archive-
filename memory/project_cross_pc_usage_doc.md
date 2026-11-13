@@ -62,3 +62,4 @@ modified: 2026-11-09T23:02:37.973Z
 - 11/10 08:00: 11/09(전일 최종)·11/10 usage·account 업로드, db_cache 갱신 (11/05 이전은 DB 값 유지 원칙대로 미변경)
 - 11/11 08:00: 11/10(전일 최종)·11/11 usage·account 업로드, db_cache 갱신, 11/10 세션 요약 3건 summaries.json 추가
 - 11/12 08:05: 11/11(전일 최종, 81,457,888 토큰)·11/12 usage·account 업로드, db_cache 갱신, 11/11 세션 요약 2건 summaries.json 추가
+- 11/13 08:55: 11/12(전일 최종, 48,798,173 토큰)·11/13 usage·account 업로드, db_cache 갱신

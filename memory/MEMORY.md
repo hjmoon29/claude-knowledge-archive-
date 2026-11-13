@@ -53,7 +53,7 @@
 - [Ziggle 마우스 지글러](project_ziggle.md) — 트레이 On/Off 화면보호기 방지, PowerShell+vbs(exe는 보안 삭제), 바탕화면 ziggle.lnk (2026-11-05)
 - [IoT기능정의서 = CW_IoCare_제품_기능정의서](reference_iot_func_def.md) — 팀 내 호칭, 최신 v2.75_20261106 구글시트 1w15PUJ…, 버전 자주 바뀜 (2026-11-09)
 - [2027 IoCare 1.0 정수기 이관 계획](project_iocare1_wp_migration.md) — 미이관 IOT 9·NFC 46, 웨이브 W1 국내3종→W2 해외4종→W3 NFC→27/12 종료 (2026-11-10 초안)
-- [좌욕스파비데 사용량 리포트(제품제어)](project_spa_bidet_usage_report.md) — 공식 표기 '좌욕스파 비데', 리포트 화면 X·제품제어만, Figma 섹션 22126:702 v4(축약 펼침·논점 패널 11/10), 엑셀 4셀 반영 완료, 개발·기획 답변 대기
+- [좌욕스파비데 사용량 리포트(제품제어)](project_spa_bidet_usage_report.md) — 공식 표기 '좌욕스파 비데', 11/12 기능정의서 v2.78 +1분 행 추가, 리포트 화면 X·제품제어만, Figma 섹션 22126:702 v4(축약 펼침·논점 패널 11/10), 엑셀 4셀 반영 완료, 개발·기획 답변 대기
 - [말련향 정수기 Jira 2810 정비](project_malaysia_wp_jira.md) — 하위문서 22건 담당 문효준, 알림·루틴·소모품은 대만 아이콘 프로 열 작성 후 복제 (2026-11-10)
 - [정의서 수정 시 백업·버전·이력](feedback_doc_version_backup.md) — 백업 폴더 복제→파일명 버전/일자→문서이력 기재 필수
 - [기능정의서 옵션 줄바꿈 규칙](feedback_func_def_option_format.md) — 옵션값·옵션명은 값마다 줄바꿈(사내 규칙), 신규·미정의 값은 빨간 '미정'
@@ -64,3 +64,4 @@
 - [다국어번역 정산 작업](project_translation_settlement.md) — 번역 정산 공식 명칭, NECOA 외 전체 서비스 포함·월말, 업무봇 t38 (2026-11-11)
 - [매뉴얼 앱 다운로드 QR·URL 문서](reference_manual_qr_url_doc.md) — CW_IoCare_IoT서비스 소개페이지 URL정의서 v3.2 (1ljbt1jQ…), 'URL QR코드 리스트' 탭
 - [IMS 호출 주의](feedback_ims_caution.md) — 11/10 IMS 서버 에러 연락으로 중단, 재허락 전 IMS 접근 금지·전수조회 금지
+- [RMCM02 알림 이동 화면](project_rmcm02_landing.md) — 알림 탭 랜딩 담당 최한나님, 리포트 1뎁스·수면센서 배너 일일 선택 (2026-11-13)
