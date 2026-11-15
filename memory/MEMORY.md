@@ -65,3 +65,5 @@
 - [매뉴얼 앱 다운로드 QR·URL 문서](reference_manual_qr_url_doc.md) — CW_IoCare_IoT서비스 소개페이지 URL정의서 v3.2 (1ljbt1jQ…), 'URL QR코드 리스트' 탭
 - [IMS 호출 주의](feedback_ims_caution.md) — 11/10 IMS 서버 에러 연락으로 중단, 재허락 전 IMS 접근 금지·전수조회 금지
 - [RMCM02 알림 이동 화면](project_rmcm02_landing.md) — 알림 탭 랜딩 담당 최한나님, 리포트 1뎁스·수면센서 배너 일일 선택 (2026-11-13)
+- [다음 주 할 일 (11/16~)](project_pending_next_week_20261116.md) — 비데 계정별 리포트 서버 문의·RMCM02 후속, 다음 주 첫 대화에서 상기 (11/13 보류)
+- [IoCare+ 웹 프로토타입 복사본](project_iocare_plus_proto.md) — 고도화 실험용 PWA, projects/iocare-plus-proto, v1 기능·v2 디자인 커밋 (2026-11-13)
