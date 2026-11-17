@@ -26,3 +26,7 @@ metadata:
 - IoT기능정의서 v2.76: 말련 아이콘 프로 열 추가(대만 파생 복제 + 시작온수 45/70/80/90·MY워터 90℃·차 7종·날씨 X), 차 Default 등 TBD 남음. 문서이력 J열 모델 목록은 QUERY 수식(직접 삽입 불가)
 - 모델별 기본정보 v3.18: MY 194~198행 오픈/출시 28-01
 - Google 토큰 gsheets-token.json 이제 drive+spreadsheets 범위
+
+## 2026-11-16
+- 모델별 기본정보 v3.20_20261116: 2.0 탭 199행에 말련향 엘리트 빌트인(WESTERN_NTBI_MY, 출시 28-02) 추가. 노출모델명·모델명·자재·POP·제품명·판매형태·IoT모듈 제조사 TBD(착수서 12월 초 상신 후). 백업 사본 1BsGiNgul3fis4DogWszhOkAalfZARZTUDHUMrl77R5U, 문서이력 194번
+- 프로젝트코드 WESTERN_NTBI_MY = 국내 WESTERN_NTBI_KR 기준 MY 적용 (사용자 확정, 11/16)
