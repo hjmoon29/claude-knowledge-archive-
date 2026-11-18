@@ -52,9 +52,10 @@
 - [일일 업무메모 참고](feedback_daily_work_memo.md) — ~/Downloads/yymmdd_업무내용.txt(CP949)도 업무 답변 소스, 상단 계정·비번·카드정보는 절대 인용 금지 (2026-10-28)
 - [Ziggle 마우스 지글러](project_ziggle.md) — 트레이 On/Off 화면보호기 방지, PowerShell+vbs(exe는 보안 삭제), 바탕화면 ziggle.lnk (2026-11-05)
 - [IoT기능정의서 = CW_IoCare_제품_기능정의서](reference_iot_func_def.md) — 팀 내 호칭, 최신 v2.75_20261106 구글시트 1w15PUJ…, 버전 자주 바뀜 (2026-11-09)
-- [2027 IoCare 1.0 정수기 이관 계획](project_iocare1_wp_migration.md) — 미이관 IOT 9·NFC 46, 웨이브 W1 국내3종→W2 해외4종→W3 NFC→27/12 종료 (2026-11-10 초안)
+- [2027 IoCare 1.0 이관 계획](project_iocare1_wp_migration.md) — 내 담당=정수기 IoT 9·비데 3(BAS37-A/B·38-A) 12건, NFC 후순위·청정기 제외(11/18), 기준 위키 392072242
 - [좌욕스파비데 사용량 리포트(제품제어)](project_spa_bidet_usage_report.md) — 공식 표기 '좌욕스파 비데', 11/12 기능정의서 v2.78 +1분 행 추가, 리포트 화면 X·제품제어만, Figma 섹션 22126:702 v4(축약 펼침·논점 패널 11/10), 엑셀 4셀 반영 완료, 개발·기획 답변 대기
 - [말련향 정수기 Jira 2810 정비](project_malaysia_wp_jira.md) — 하위문서 22건 담당 문효준, 알림·루틴·소모품은 대만 아이콘 프로 열 작성 후 복제 (2026-11-10)
+- [말련향 ERP 담당자 문의 (정태승님)](project_malaysia_erp_inquiry.md) — 며칠 내 메신저/메일 문의 예정, 질문 5개·초안 Documents 저장 (2026-11-17 미발송)
 - [정의서 수정 시 백업·버전·이력](feedback_doc_version_backup.md) — 백업 폴더 복제→파일명 버전/일자→문서이력 기재 필수
 - [기능정의서 옵션 줄바꿈 규칙](feedback_func_def_option_format.md) — 옵션값·옵션명은 값마다 줄바꿈(사내 규칙), 신규·미정의 값은 빨간 '미정'
 - [POP코드 = 자재코드 36진수](reference_pop_code_base36.md) — 문서 조회 대신 36진수 5자리 변환으로 계산 (114346→02G8A)
@@ -65,5 +66,6 @@
 - [매뉴얼 앱 다운로드 QR·URL 문서](reference_manual_qr_url_doc.md) — CW_IoCare_IoT서비스 소개페이지 URL정의서 v3.2 (1ljbt1jQ…), 'URL QR코드 리스트' 탭
 - [IMS 호출 주의](feedback_ims_caution.md) — 11/10 IMS 서버 에러 연락으로 중단, 재허락 전 IMS 접근 금지·전수조회 금지
 - [RMCM02 알림 이동 화면](project_rmcm02_landing.md) — 알림 탭 랜딩 담당 최한나님, 리포트 1뎁스·수면센서 배너 일일 선택 (2026-11-13)
-- [다음 주 할 일 (11/16~)](project_pending_next_week_20261116.md) — 비데 계정별 리포트 서버 문의·RMCM02 후속, 다음 주 첫 대화에서 상기 (11/13 보류)
+- [다음 주 할 일 (11/16~)](project_pending_next_week_20261116.md) — 비데 계정별 리포트는 11/16 홍민재님 확인으로 해결(mbrSeq별), RMCM02 후속 남음, 다음 주 첫 대화에서 상기 (11/13 보류)
 - [IoCare+ 웹 프로토타입 복사본](project_iocare_plus_proto.md) — 고도화 실험용 PWA, projects/iocare-plus-proto, v1 기능·v2 디자인 커밋 (2026-11-13)
+- [사용자 담당 제품](user_product_ownership.md) — 말련향 정수기 주담당, 태국향은 최린아님 정·본인 부, 좌욕스파 비데, 1.0 이관(정수기 IoT·비데) (11/18)

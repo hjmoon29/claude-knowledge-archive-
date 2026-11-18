@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: cb11de44-1278-4cb9-a6b6-70978d4c1804
-  modified: 2026-11-09T23:49:12.120Z
+  modified: 2026-11-17T07:34:49.108Z
 ---
 
 에픽 IOCARERENEW2023-2810 (담당 최린아, 하위문서 22건 모두 담당자 문효준으로 11/10 변경). 대만 에픽 2597(오가현).
@@ -30,3 +30,8 @@ metadata:
 ## 2026-11-16
 - 모델별 기본정보 v3.20_20261116: 2.0 탭 199행에 말련향 엘리트 빌트인(WESTERN_NTBI_MY, 출시 28-02) 추가. 노출모델명·모델명·자재·POP·제품명·판매형태·IoT모듈 제조사 TBD(착수서 12월 초 상신 후). 백업 사본 1BsGiNgul3fis4DogWszhOkAalfZARZTUDHUMrl77R5U, 문서이력 194번
 - 프로젝트코드 WESTERN_NTBI_MY = 국내 WESTERN_NTBI_KR 기준 MY 적용 (사용자 확정, 11/16)
+
+## 2026-11-17
+- 3225 신규: [IMS] 말련향 정수기 기준정보·소모품·문제 해결 컨텐츠 IMS 등록 (작업, 컴포넌트 IMS, 기한 27/6/30 임의). 엘리트 빌트인 자재·POP 확정 시 표에 추가할 것
+- Jira 설명 표에 빈 칸(`|||`)을 쓰면 헤더 칸으로 읽혀 깨짐 → 모든 칸을 채우고 `_` 들어간 코드는 백틱으로
+- ERP 담당자 문의 건: [[project-malaysia-erp-inquiry]]
