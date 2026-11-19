@@ -69,3 +69,5 @@
 - [다음 주 할 일 (11/16~)](project_pending_next_week_20261116.md) — 비데 계정별 리포트는 11/16 홍민재님 확인으로 해결(mbrSeq별), RMCM02 후속 남음, 다음 주 첫 대화에서 상기 (11/13 보류)
 - [IoCare+ 웹 프로토타입 복사본](project_iocare_plus_proto.md) — 고도화 실험용 PWA, projects/iocare-plus-proto, v1 기능·v2 디자인 커밋 (2026-11-13)
 - [사용자 담당 제품](user_product_ownership.md) — 말련향 정수기 주담당, 태국향은 최린아님 정·본인 부, 좌욕스파 비데, 1.0 이관(정수기 IoT·비데) (11/18)
+- [작업 결과물은 다운로드 폴더](feedback_save_to_downloads.md) — 산출물 파일은 모두 C:\Users\20020911\Downloads에 저장 (2026-11-18)
+- [Figma 작업안·SPEC제외 = 미확정](feedback_figma_wip_pages.md) — '작업안' 페이지와 'SPEC 제외' 덮개 영역은 확정 UX 검색에서 제외(bbox 겹침 확인) (2026-11-19)
