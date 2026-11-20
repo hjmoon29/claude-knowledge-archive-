@@ -3,7 +3,7 @@ name: Claude 멀티 PC 사용량 공유 저장소 Doc
 description: Mac·Windows 등 여러 PC의 Claude Code 일일 사용량을 하나의 Claude Doc에 모아 교차 집계하는 시스템 (2026-10-08)
 type: project
 originSessionId: 8ce9232a-cdfb-4b01-be53-d8aee2ebf4cb
-modified: 2026-11-09T23:02:37.973Z
+modified: 2026-11-19T23:12:01.902Z
 ---
 # 설계
 
@@ -65,3 +65,4 @@ modified: 2026-11-09T23:02:37.973Z
 - 11/13 08:55: 11/12(전일 최종, 48,798,173 토큰)·11/13 usage·account 업로드, db_cache 갱신
 - 11/16 08:15: 11/13(전일 최종, 16,102,387 토큰)·11/16 usage·account 업로드, db_cache 갱신, 11/13 세션 요약 2건 summaries.json 추가
 - 11/19 08:05: 11/16(최종 보정 362,436→25,241,054)·11/17(461,274)·11/18(28,832,177)·11/19 usage·account 업로드(11/17·18은 누락돼 있었음), db_cache 갱신
+- 11/20 08:12: 11/19(전일 최종, 32,736,258 토큰)·11/20 usage·account 업로드, db_cache·Drive 갱신
