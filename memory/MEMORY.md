@@ -55,6 +55,7 @@
 - [2027 IoCare 1.0 이관 계획](project_iocare1_wp_migration.md) — 내 담당=정수기 IoT 9·비데 3(BAS37-A/B·38-A) 12건, NFC 후순위·청정기 제외(11/18), 기준 위키 392072242
 - [좌욕스파비데 사용량 리포트(제품제어)](project_spa_bidet_usage_report.md) — 공식 표기 '좌욕스파 비데', 11/12 기능정의서 v2.78 +1분 행 추가, 리포트 화면 X·제품제어만, Figma 섹션 22126:702 v4(축약 펼침·논점 패널 11/10), 엑셀 4셀 반영 완료, 개발·기획 답변 대기
 - [말련향 정수기 Jira 2810 정비](project_malaysia_wp_jira.md) — 하위문서 22건 담당 문효준, 알림·루틴·소모품은 대만 아이콘 프로 열 작성 후 복제 (2026-11-10)
+- [본사 IoT 업무 주관부서·담당자 (말련향, Drive 구글문서)](project_malaysia_rnr_doc.md) — Drive 구글 문서(19DqANPl…)가 원본, Docs API로 수정, 일정은 Jira 하위작업 기한별 (2026-11-23)
 - [말련향 ERP 담당자 문의 (정태승님)](project_malaysia_erp_inquiry.md) — 며칠 내 메신저/메일 문의 예정, 질문 5개·초안 Documents 저장 (2026-11-17 미발송)
 - [정의서 수정 시 백업·버전·이력](feedback_doc_version_backup.md) — 백업 폴더 복제→파일명 버전/일자→문서이력 기재 필수
 - [기능정의서 옵션 줄바꿈 규칙](feedback_func_def_option_format.md) — 옵션값·옵션명은 값마다 줄바꿈(사내 규칙), 신규·미정의 값은 빨간 '미정'
