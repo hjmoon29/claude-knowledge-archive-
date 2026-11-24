@@ -25,3 +25,4 @@ metadata:
 **(이전) 다음 단계:** `claude --chrome`으로 새 세션 시작 → Chrome NativeMessagingHosts에 `com.anthropic.claude_code_browser_extension` 생기는지 확인 → 같은 manifest 경로를 `HKCU\Software\Microsoft\Edge\NativeMessagingHosts\com.anthropic.claude_code_browser_extension` (기본값)에 등록 → Edge 완전 종료 후 재실행 → 연결 확인. Edge는 공식 지원 여부 불확실.
 **Why:** 사용자가 네이버웍스 메신저 대화를 Claude로 확인하길 원함. Playwright 등 확장 우회 방식은 IT 확인 없이 설치하지 않기로 함.
 **How to apply:** 사용자가 "크롬/엣지 연결", "네이버웍스 대화 읽기" 이어서 요청하면 위 다음 단계부터 진행. 연관: [[project_naverworks_notify]]
+- 2026-11-24 메신저 발송 성공: Playwright 프로필 ~/.playwright-works-profile(msedge)로 로그인→방 찾기→발송을 한 창에서 처리(창 닫으면 로그인 풀림). 나와의 대화방 이름 = "문효준 님[IoT기획팀/팀원]", 입력창 [contenteditable=true], 줄바꿈 Shift+Enter. 스크립트는 세션 scratchpad msg_send.py(방이름 정확 일치 1개일 때만 발송)

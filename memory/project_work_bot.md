@@ -171,3 +171,7 @@ metadata:
 - 11/12 오후: 프로젝트 대응을 **전용 화면**으로 분리 — 상단 바 [🗂️ 프로젝트 대응 | 🧰 업무 도구] 전환(hub.mode, 기본 pj). 프로젝트 모드: 왼쪽=프로젝트 목록(#pjside, 배지), 본문 전체=#pjmain(헤더+한눈에 2열 대시보드: 상황·할일 | 메일·Jira, 아래 파일). 업무 도구 목록에서는 projects 봇 제외(selectBot이 projects면 pj 모드로). 백업 index.html.bak_20261112_pjmode
 - 11/12: 프로젝트 목록 드래그 순서 변경(reorder 액션, 즉시 화면 반영 후 저장) + 제품 종류 아이콘(정수기·비데·공기청정기·매트리스·식기세척기·에어컨·가습기·제습기·기타 SVG). 종류는 이름·모델명 자동 추정(guess_category), ✎ '제품 종류'에서 직접 지정 가능. 백업 index.html.bak_20261112_drag, projects.py.bak_20261112_icon
 - 11/12: 프로젝트 새로 확인에 **메일 첨부 자동 저장**(본문 그림 제외, ~/Downloads/IoT업무봇/<프로젝트>/, 같은 이름·크기면 건너뜀, 다른 내용이면 _yymmdd_HHMM) + **다운로드 폴더 전체 스캔**(하위 4단계, bot-hub·claude-daily-summary·'개인' 폴더 제외, 폴더 이름 키워드도 매칭). **아침 자동 확인** 작업 스케줄러 `WorkBotProjects` 매일 08:20 → bots/projects/morning.py(pythonw), 로그 runs/projects/morning.log, run.lock으로 화면 실행과 겹침 방지. 왼쪽 아래 '⏰ 매일 아침 자동 확인' 버튼에서 켜기/시각 변경. 11/12 10:00 수동 실행 검증 완료. PDF는 화면 미리보기 미지원(열기만)
+
+## 2026-11-24: 제품별 진행상황 단계 순서 재배치
+- 착수: 킥오프→상품화 착수서→DPP / IoT기획: 기능정의서 바로 뒤 '사양 전달·제품 개발·전장', Figma 뒤로 문제해결·앱 가이드 / 개발: 디자인·퍼블리싱을 앱·FE 앞 / 출시: 양산인정→운영 배포→출시
+- 순서만 변경(id 동일, 데이터 영향 없음). 백업 bots/product-status/config.json.bak_20261124_order. 커밋·푸시 6c968bf(config.json만, index.html·bots/projects는 미커밋 유지)

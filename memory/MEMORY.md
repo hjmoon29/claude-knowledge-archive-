@@ -73,3 +73,6 @@
 - [작업 결과물은 다운로드 폴더](feedback_save_to_downloads.md) — 산출물 파일은 모두 C:\Users\20020911\Downloads에 저장 (2026-11-18)
 - [IoT 기능 예시앱 5종](project_iot_example_apps.md) — Downloads\IoT_예시앱 작성 완료·검증 전, 11/20 이어서 브라우저 확인 (2026-11-19 중단)
 - [Figma 작업안·SPEC제외 = 미확정](feedback_figma_wip_pages.md) — '작업안' 페이지와 'SPEC 제외' 덮개 영역은 확정 UX 검색에서 제외(bbox 겹침 확인) (2026-11-19)
+- [통합테스트 주관 = IoT기획팀](feedback_integration_test_owner.md) — 모든 제품 대응에서 통합테스트는 우리 팀 주관, 플랫폼개발팀 X (2026-11-24)
+- [수정 파란색·삭제 취소선](feedback_edit_marking.md) — 문서 수정은 파란색, 삭제는 바로 지우지 말고 취소선 (2026-11-24)
+- [제품등록 정리안 페이지](project_reg_cleanup_page.md) — 제품등록 Figma 파일 내 새 페이지 29700:3, 정리안·연결방식별·제품별 화면 플로우 (2026-11-24)
