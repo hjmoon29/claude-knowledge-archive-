@@ -16,3 +16,8 @@ Ziggle = 화면보호기 방지용 마우스 지글러 (2026-11-05 완성, 사�
 
 **Why:** 사용자가 창·설정 없이 트레이에서 On/Off만 원함 (창 앱→간소화→트레이 순으로 변경됨).
 **How to apply:** 회사 PC에서 csc로 만든 서명 없는 exe는 보안 프로그램이 즉시 삭제함 → 앱은 PowerShell+vbs 방식으로. 테스트로 프로세스 강제 종료 시 트레이에 옛 아이콘 잔상이 남아 혼동 주의.
+
+## 2026-11-25 보강 (사용자: On인데도 화면보호기 뜸)
+- 점검: SendInput 마우스 신호로 GetLastInputInfo 0 리셋 확인(Windows 기준 정상). 화면보호기 coway.scr 600초·보안(정책 고정). 보안 로그 잠금 이벤트 없음(감사 꺼짐), powercfg /requests는 관리자 필요
+- 변경: 30초 주기, 1px 이동+F15 키 탭+SetThreadExecutionState 매 tick 재설정, `ziggle.log`에 tick마다 idle_before/after 기록(START/ON/OFF/EXIT). 백업 MouseJiggleApp.ps1.bak_20261125
+- 다음: 로그에서 잠긴 시각 전후 tick이 계속 찍혔고 idle_after≈0이면 → 보안 에이전트(n6agent·PIAgent 등)가 별도 기준으로 잠그는 것(사용자 모드로는 우회 어려움). tick이 끊겼으면 → 프로그램 문제
