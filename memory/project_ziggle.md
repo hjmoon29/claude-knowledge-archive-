@@ -19,5 +19,6 @@ Ziggle = 화면보호기 방지용 마우스 지글러 (2026-11-05 완성, 사�
 
 ## 2026-11-25 보강 (사용자: On인데도 화면보호기 뜸)
 - 점검: SendInput 마우스 신호로 GetLastInputInfo 0 리셋 확인(Windows 기준 정상). 화면보호기 coway.scr 600초·보안(정책 고정). 보안 로그 잠금 이벤트 없음(감사 꺼짐), powercfg /requests는 관리자 필요
-- 변경: 30초 주기, 1px 이동+F15 키 탭+SetThreadExecutionState 매 tick 재설정, `ziggle.log`에 tick마다 idle_before/after 기록(START/ON/OFF/EXIT). 백업 MouseJiggleApp.ps1.bak_20261125
+- 변경: 30초 주기(→ 11/25 14:05 사용자 요청으로 4분=240초로 변경, 화면보호기 600초 대비 여유), 1px 이동+F15 키 탭+SetThreadExecutionState 매 tick 재설정, `ziggle.log`에 tick마다 idle_before/after 기록(START/ON/OFF/EXIT). 백업 MouseJiggleApp.ps1.bak_20261125
 - 다음: 로그에서 잠긴 시각 전후 tick이 계속 찍혔고 idle_after≈0이면 → 보안 에이전트(n6agent·PIAgent 등)가 별도 기준으로 잠그는 것(사용자 모드로는 우회 어려움). tick이 끊겼으면 → 프로그램 문제
+- 11/25 점심 판정: tick은 30초마다 계속 실행됨. 11:19:41 보안 프로세스 PIMngCtr(관리자 권한)가 시작된 뒤 11:20부터 SendInput은 성공(sent=1111)인데 유휴시간이 리셋되지 않음 → 관리자 권한 창이 입력을 막음(UIPI). 600초 뒤 11:30에 잠금(sent=0000, 잠금 화면). 결론: 회사 보안 정책(점심시간)이 원인이고 Ziggle 문제는 아님. 평소 업무시간에는 정상 동작함

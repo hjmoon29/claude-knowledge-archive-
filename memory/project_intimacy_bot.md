@@ -22,3 +22,9 @@ metadata:
 - 메일은 코웨이 도메인(coway.com·partner.coway.com·coway.co.kr·coway.io)만 — 외부 12명(MCNC·라이온코리아·휴넷 등) 집계 삭제
 
 관련: [[project-work-bot]]
+
+## 2026-11-25 네이버웍스 자동 로그인
+- 로그인 화면 = auth.worksmobile.com 회사 SSO 폼(#j_username 사번 미리 채워짐, #j_password, #btnSubmit, 추가 인증 안 보임)
+- bots/intimacy/works_login.py try_login(page): 로그인 화면이면 DPAPI 저장 비밀번호(~/.config/work-bot/works_pw.dpapi)로 로그인 → 'ok'/'no_password'/'failed: …'. 비밀번호는 로그·화면에 안 남김
+- 저장: bot-hub/works_pw_save.bat → bots/intimacy/works_pw_save.ps1 (Get-Credential 창, UTF-8 BOM). 비밀번호 바꾸면 다시 실행
+- 적용: intimacy src_msg·messenger_login, scripts/calendar_wallpaper/morning_routine.read_messenger(아침·수시 갱신 모두). 실패 시 기존 로그인 창 대기. 백업 *.bak_20261125_autologin

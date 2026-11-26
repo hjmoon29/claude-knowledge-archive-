@@ -175,3 +175,26 @@ metadata:
 ## 2026-11-24: 제품별 진행상황 단계 순서 재배치
 - 착수: 킥오프→상품화 착수서→DPP / IoT기획: 기능정의서 바로 뒤 '사양 전달·제품 개발·전장', Figma 뒤로 문제해결·앱 가이드 / 개발: 디자인·퍼블리싱을 앱·FE 앞 / 출시: 양산인정→운영 배포→출시
 - 순서만 변경(id 동일, 데이터 영향 없음). 백업 bots/product-status/config.json.bak_20261124_order. 커밋·푸시 6c968bf(config.json만, index.html·bots/projects는 미커밋 유지)
+
+## 2026-11-25: 제품별 진행상황 'Jira 프로젝트 생성' 단계 (킥오프 다음)
+- config stage id `jira_epic`(착수 그룹). jira_fill이 제품의 에픽 자체를 조회해 상태 완료·날짜=에픽 생성일·메모 '키 제목 · 하위 문서 n건' 자동 채움(직접 입력 칸은 안 덮음). 백업 config.json/product_status.py .bak_20261125_jiraepic, 데이터 products.json.bak_20261125_jiraepic
+- 태국향 아이콘 프로 에픽 = IOCARERENEW2023-3154 연결(제품별·프로젝트 대응 둘 다). 대만향 더매너 비데 플러스(3340)·더블케어 비데(3341) 추가. 미커밋
+- 11/25 DPP 칸 분리: dpp=label '1차 DPP'(jira ['1차 DPP']) + dpp2 '2차 DPP'(jira ['2차 DPP']). 백업 config.json.bak_20261125_dpp2·products.json.bak_20261125_dpp2
+- 11/25 일정 갱신: 좌욕스파 비데 출시 27/3/2(11/24 안정수님 메일, 기존 3/29), 양산인정은 김영표님 세부 일정 안내 대기. 정수기 3종은 프로젝트 개요·협업시트와 동일 확인
+- 11/25 DPP 1·2차 통합: 1차 칸 메모에 '통합' 있거나 Jira 문서가 차수 없는 'DPP'(2차 DPP 문서 없음)면 sync_dpp()가 2차 칸을 1차와 같은 상태·'1·2차 통합 DPP' 메모(src '통합')로 자동 표시. 직접 입력한 2차 칸은 안 덮음. 백업 product_status.py.bak_20261125_dppmerge
+
+## 2026-11-25: 문서이력 자동 반영 + 프로젝트 대응 통합 + PC 시작 자동 실행
+- `bots/product-status/doc_sync.py`: 모델별 기본정보·IoT기능정의서 '문서이력' 새 행 → 제품 매칭(config doc_sync.products match/proj_code) → 내 담당 Jira(제품 기본 정보/제품 기능 정의/POP)에 댓글+상태 전진(기본정보: 2.0 탭 TBD 없고 시트 출시월=진행상황 출시월이면 해결, POP 칸 다 차면 POP 해결, 기능정의서는 할 일→진행 중만). 남의 담당 문서는 안 건드리고 알림에만. 진행상황 칸 갱신(직접 입력·더 최근 정리 칸은 메모 유지). 메일(gmail.json)+Windows 토스트 알림. state=Drive product-status/doc_sync_state.json, 로그 runs/product-status/doc_sync.log. 작업 WorkBotDocSync 평일 09:30·13:30·17:30. 첫 실행 11/25: 3027·3023 할 일→진행 중, 2915·2925 댓글
+- 제품별 진행상황 → 프로젝트 대응 화면 '전체 진행상황'(pjSel "__ps", 들어가면 항상 먼저). 업무 도구 목록에서 제외. 제품 화면 상단에 그 제품 단계 칩 줄(pjPsStrip, 칩 누르면 입력). '지금 상황' 색 배지 카드(pjSumHTML, 결정/진행/이슈/미정/다음), 요약 프롬프트도 줄마다 머리말 형식으로. 할 일 ✓완료·⏸보류·✕삭제(+보류/완료 목록에서 다시 열기), projects.mark에 hold, 보류 항목은 Claude가 재생성 안 하게 프롬프트에 전달. 백업 index.html.bak_20261125_pjps/pjps2, projects.py.bak_20261125_hold
+- PC 시작: 작업 `IoTWorkBot_Startup`(로그온+30초) → bots/startup_refresh.py: start_workbot.ps1 → 네트워크 대기 → morning_routine.py --force(메신저·팀휴가·내 할 일·진행상황·월페이퍼) → doc_sync → projects/morning.py → intimacy.refresh → 토스트. 로그 runs/startup.log. 사용자 요청으로 IoTWorkBot_0810·IoTWorkBot_Morning·WorkBotProjects(08:20) 비활성화(삭제 아님). 낮 IoTWorkBot_Wallpaper·WorkBotDocSync는 유지. 프로젝트 화면 자동 확인 버튼은 'PC 켤 때 켜짐' 표시
+- 미커밋
+- 11/25 해외향 단계 추가(출처: 본사 IoT 업무 주관부서·담당자 문서 19DqANPl…): ovs_policy(법인 판매·운영 정책, 착수)·ovs_member(통합회원 국가·언어)·ovs_cs(고객센터 연락처 IMS)·ovs_photo(포토모드 법무, only 아이콘 프로)·ovs_terms_pub(약관 번역·게시·IMS)·ovs_erp(ERP 연동, 개발)·ovs_field(현지 필드테스트, 검증)·ovs_store·ovs_train(출시) + 공통 qr(매뉴얼 앱 다운로드 QR). i18n은 '지원 언어·앱 번역'(해외향 전용), legal 키워드에서 '법무' 제외. stage에 regions/only 속성 → product_status.apply_scope()가 load 때 비해당 칸을 '해당없음'(src 자동)으로, 향지 바뀌면 자동 칸 해제. 백업 config/product_status .bak_20261125_ovs, products.json.bak_20261125_ovs. 제품 화면 진행상황 줄은 줄바꿈 배치
+- 11/25 비고: 첫 줄=핵심(항상 표시, ⚠ 시작 시 빨강), 둘째 줄부터 '상세 n줄' 접힘(psNoteHTML) — 전체 표 비고 칸·제품 화면 진행상황 상단(✎ 비고 버튼) 공통. 6개 제품 비고 재정리. 백업 index.html/products.json .bak_20261125_note
+- 11/25: 첫 화면을 항상 「프로젝트 대응」으로 고정(index.html 끝 setMode("pj"), 이전엔 마지막 모드 hub.mode 기억). 백업 index.html.bak_20261125_firstpj, 미커밋
+
+## 2026-11-26: '통합테스트 TC 작성' 봇 `bots/tc-writer` (기획 업무, order 15)
+- draft: 제품명(+모델) → IoT기능정의서 최신본(사본·백업·FE 제외)에서 제품 열 블록 자동 추출(제목 줄에서 모델/토큰 매칭, '-'·빈 행 제외) → 탭으로 제품군 결정 → 참고 TC = Drive '10. [기획] 통합테스트 TC'(1ET-QxYJ…) 제품군 폴더(01_water·02_air·03_sleep·04_living, water는 검수/01.통합테스트 TC도) 최근 시트 중 '2. IoT App 통합 테스트_TC' 탭 있는 것 → Figma 제품군 02_제품 파일(표지·이력·작업안/작업본·SPEC 제외 페이지 스킵, 선택 시 00_03제품등록) → claude -p opus[1m] JSON(overview·tc[]·review_points) → runs/tc-writer/tc-*.json
+- create: 참고 TC를 제품군 폴더에 files.copy(서식·참고 탭 유지) → 표지·문서이력(v0.1)·개요(프로젝트 정보·진행방향·일정 TBD)·TC 행(행 삭제/삽입+row 서식 복사+가로 병합 MERGE_ROWS+구분 열 세로 병합, RAW 쓰기, 행 높이 자동)·이슈 탭 비움. 쓰기 토큰은 qr_url.token()
+- 설정 bots/tc-writer/config.json (제품군→폴더·기능정의서 탭·Figma 키). Figma 토큰은 projects:read 범위 없어 파일 목록 API 불가 → 키 고정
+- 시험 11/26: 좌욕스파 비데 BASH53-A → 90행·확인 필요 18건, 4분 30초·$1.28, 문서 생성 1jJ7Gmh1iQ5vMaR57t6bKnKQS5J81QI4earFCxNLokHI (04_living). TC 머리의 검토·승인 담당자 이름은 참고 문서 값 유지
+- index.html view tc_draft/tc_list·아이콘(백업 index.html.bak_20261126_tc). 미커밋, 팀 배포 zip 화이트리스트에 bots/tc-writer 추가 필요
