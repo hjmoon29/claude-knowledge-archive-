@@ -52,7 +52,7 @@
 - [일일 업무메모 참고](feedback_daily_work_memo.md) — ~/Downloads/yymmdd_업무내용.txt(CP949)도 업무 답변 소스, 상단 계정·비번·카드정보는 절대 인용 금지 (2026-10-28)
 - [Ziggle 마우스 지글러](project_ziggle.md) — 트레이 On/Off 화면보호기 방지, PowerShell+vbs(exe는 보안 삭제), 바탕화면 ziggle.lnk (2026-11-05)
 - [IoT기능정의서 = CW_IoCare_제품_기능정의서](reference_iot_func_def.md) — 팀 내 호칭, 최신 v2.92_20261124 구글시트 1w15PUJ…, 버전 자주 바뀜 (2026-11-09)
-- [2027 IoCare 1.0 이관 계획](project_iocare1_wp_migration.md) — 내 담당=정수기 IoT 9·비데 3(BAS37-A/B·38-A, Wi-Fi&BLE 정책 이관) 12건, 리퍼브·청정기 제외, NFC 47건 후순위, 위키 405837425 문서 v0.3(11/25, 기능 1.0 동일·신규 기능 없음, 우선순위 A안, 1·2·3차 이관 v27.5~v27.7)
+- [2027 IoCare 1.0 이관 계획](project_iocare1_wp_migration.md) — 내 담당=정수기 IoT 9·비데 3(BAS37-A/B·38-A, Wi-Fi&BLE 정책 이관) 12건, 리퍼브·청정기 제외, NFC 47건 이관 제외 확정(11/27), 위키 405837425 「IoCare 1.0 제품 (정수기,비데) IoCare+ 이관 계획 초안 (261127)」 v0.4(26/12 중순 착수·상반기 완료, QA v27.3~v27.5, 기획 공수 축소)
 - [좌욕스파비데 사용량 리포트(제품제어)](project_spa_bidet_usage_report.md) — 공식 표기 '좌욕스파 비데', 11/12 기능정의서 v2.78 +1분 행 추가, 리포트 화면 X·제품제어만, Figma 섹션 22126:702 v4(축약 펼침·논점 패널 11/10), 엑셀 4셀 반영 완료, 개발·기획 답변 대기
 - [말련향 정수기 Jira 2810 정비](project_malaysia_wp_jira.md) — 하위문서 22건 담당 문효준, 알림·루틴·소모품은 대만 아이콘 프로 열 작성 후 복제 (2026-11-10)
 - [본사 IoT 업무 주관부서·담당자 (말련향, Drive 구글문서)](project_malaysia_rnr_doc.md) — Drive 구글 문서(19DqANPl…)가 원본, Docs API로 수정, 일정은 Jira 하위작업 기한별 (2026-11-23)
